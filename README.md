@@ -8,6 +8,11 @@ Plataforma de arrecadação da igreja **Sara Nossa Terra — Júlia-SP**, com me
 Veja `CLAUDE.md` para o contexto completo do projeto (identidade visual, tom de
 voz, estrutura de páginas e modelo de dados).
 
+> **Testando este PR:** sem Supabase configurado, o preview sobe em modo de
+> demonstração com dados de exemplo — inclusive o painel `/admin`, acessível
+> sem login (com aviso visível). Veja a seção "Conectando o Supabase" abaixo
+> para ligar dados reais.
+
 ## Stack
 
 - [Next.js](https://nextjs.org) (App Router) + TypeScript + Tailwind CSS v4
