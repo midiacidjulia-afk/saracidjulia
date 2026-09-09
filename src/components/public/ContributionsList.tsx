@@ -24,7 +24,7 @@ export function ContributionsList({
       <ul className="divide-y divide-border">
         {list.map((c) => (
           <li key={c.id} className="flex items-center gap-4 p-4 sm:p-5">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif text-sm text-gold-light">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 font-serif text-sm text-accent-light">
               {initials(c.participantName)}
             </span>
             <div className="min-w-0 flex-1">
@@ -34,7 +34,7 @@ export function ContributionsList({
               <p className="truncate text-xs text-foreground-muted">{c.churchName}</p>
             </div>
             <div className="shrink-0 text-right">
-              <p className="text-sm font-semibold text-gold-light">
+              <p className="text-sm font-semibold text-accent-light">
                 {c.cotas} {c.cotas === 1 ? "cota" : "cotas"}
               </p>
               <p className="text-xs text-foreground-muted">{formatRelativeTime(c.createdAt)}</p>

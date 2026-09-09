@@ -19,14 +19,14 @@ export function GoalCard({
   const remaining = Math.max(0, goalAmount - totalRaised);
 
   return (
-    <Card className="glow-gold">
+    <Card className="glow-accent">
       <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:gap-8">
         <ProgressRing percent={percent} label="atingido" />
 
         <div className="flex flex-1 flex-col gap-4 text-center sm:text-left">
           <div>
             <p className="text-sm text-foreground-muted">Já arrecadamos</p>
-            <p className="font-serif text-4xl text-gold-gradient sm:text-5xl">
+            <p className="font-serif text-4xl text-accent-gradient sm:text-5xl">
               {formatCurrency(totalRaised)}
             </p>
           </div>
@@ -51,7 +51,7 @@ export function GoalCard({
       <div className="mt-6 border-t border-border pt-6">
         <div className="h-3 w-full overflow-hidden rounded-full bg-background-elevated">
           <div
-            className="relative h-full rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light"
+            className="relative h-full rounded-full bg-gradient-to-r from-accent-dark via-accent to-accent-light"
             style={{ width: `${percent}%` }}
           >
             <div className="absolute inset-0 animate-shimmer" />

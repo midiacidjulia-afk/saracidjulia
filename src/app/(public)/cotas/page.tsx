@@ -41,7 +41,7 @@ export default async function CotasPage() {
             <CotasPyramid total={settings.totalCotas} filled={stats.totalCotasFilled} />
 
             <div className="text-center">
-              <p className="font-serif text-3xl text-gold-gradient">
+              <p className="font-serif text-3xl text-accent-gradient">
                 {formatNumber(stats.totalCotasFilled)}
               </p>
               <p className="text-sm text-foreground-muted">cotas preenchidas</p>
@@ -50,7 +50,7 @@ export default async function CotasPage() {
             <div className="w-full max-w-xl">
               <div className="h-3 w-full overflow-hidden rounded-full bg-background-elevated">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light"
+                  className="h-full rounded-full bg-gradient-to-r from-accent-dark via-accent to-accent-light"
                   style={{ width: `${percent}%` }}
                 />
               </div>
@@ -60,10 +60,10 @@ export default async function CotasPage() {
                     <span
                       className={cn(
                         "h-2 w-2 rounded-full",
-                        stats.totalCotasFilled >= m ? "bg-gold" : "bg-border",
+                        stats.totalCotasFilled >= m ? "bg-accent" : "bg-border",
                       )}
                     />
-                    <span className={stats.totalCotasFilled >= m ? "text-gold-light" : undefined}>
+                    <span className={stats.totalCotasFilled >= m ? "text-accent-light" : undefined}>
                       {formatNumber(m)}
                     </span>
                   </div>

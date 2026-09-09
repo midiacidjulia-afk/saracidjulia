@@ -21,11 +21,11 @@ export function Hero({ impact }: { impact: ImpactStats }) {
 
   return (
     <section className="relative overflow-hidden border-b border-border bg-radial-glow">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(201,162,74,0.08),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(47,128,196,0.08),transparent_45%)]" />
       <Container className="relative grid grid-cols-1 gap-12 py-20 sm:py-28 lg:grid-cols-[1.35fr_1fr] lg:items-center">
         <div className="flex flex-col gap-6 animate-fade-up">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">
+            <span className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
               Campanha de arrecadação
             </span>
             <span className="text-xs italic text-foreground-muted">
@@ -35,7 +35,7 @@ export function Hero({ impact }: { impact: ImpactStats }) {
 
           <h1 className="max-w-3xl font-serif text-4xl leading-[1.15] text-foreground sm:text-5xl lg:text-6xl">
             Juntos por um templo{" "}
-            <span className="text-gold-gradient">mais forte</span> e por mais
+            <span className="text-accent-gradient">mais forte</span> e por mais
             vidas!
           </h1>
 
@@ -57,7 +57,7 @@ export function Hero({ impact }: { impact: ImpactStats }) {
           <div className="mt-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-6">
             {pillars.map((p) => (
               <span key={p.label} className="flex items-center gap-2 text-sm text-foreground-muted">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold-light">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
                   <p.icon size={15} strokeWidth={1.75} />
                 </span>
                 {p.label}
@@ -66,16 +66,16 @@ export function Hero({ impact }: { impact: ImpactStats }) {
           </div>
         </div>
 
-        <div className="card-surface glow-gold animate-fade-up rounded-2xl p-6 lg:mt-0">
+        <div className="card-surface glow-accent animate-fade-up rounded-2xl p-6 lg:mt-0">
           <p className="font-serif text-lg text-foreground">
             Mais do que um templo.
             <br />
-            <span className="text-gold-gradient">Mais vidas.</span>
+            <span className="text-accent-gradient">Mais vidas.</span>
           </p>
           <div className="mt-6 flex flex-col gap-4">
             {stats.map((s) => (
               <div key={s.label} className="flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold-light">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
                   <s.icon size={18} strokeWidth={1.75} />
                 </span>
                 <div>

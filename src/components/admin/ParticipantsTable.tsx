@@ -73,8 +73,8 @@ export function ParticipantsTable({ participants }: { participants: Participant[
                 className={cn(
                   "rounded-full border px-3 py-1.5 text-xs transition-colors",
                   status === f.key
-                    ? "border-gold bg-gold text-black"
-                    : "border-border text-foreground-muted hover:border-gold/50",
+                    ? "border-accent bg-accent text-white"
+                    : "border-border text-foreground-muted hover:border-accent/50",
                 )}
               >
                 {f.label}

@@ -70,7 +70,7 @@ export default function SobrePage() {
           </div>
 
           <Card className="h-fit">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               Fale com a coordenação da obra
             </p>
             <p className="mt-3 text-sm text-foreground-muted leading-relaxed">

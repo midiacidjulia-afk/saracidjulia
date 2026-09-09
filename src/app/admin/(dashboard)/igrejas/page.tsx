@@ -39,7 +39,7 @@ export default async function IgrejasPage() {
                   <td className="px-5 py-3 text-foreground">{c.name}</td>
                   <td className="px-5 py-3 text-foreground-muted">{c.city}</td>
                   <td className="px-5 py-3 text-foreground-muted">{formatNumber(c.participants)}</td>
-                  <td className="px-5 py-3 text-gold-light">{formatNumber(c.cotas)}</td>
+                  <td className="px-5 py-3 text-accent-light">{formatNumber(c.cotas)}</td>
                   <td className="px-5 py-3 text-foreground-muted">{formatCurrency(c.amount)}</td>
                 </tr>
               ))}

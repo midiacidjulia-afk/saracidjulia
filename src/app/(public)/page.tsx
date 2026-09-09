@@ -77,7 +77,7 @@ export default async function DashboardPage() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <SectionHeading eyebrow="Ranking" title="Igrejas participantes" />
-              <Link href="/ranking" className="text-sm text-gold hover:text-gold-light">
+              <Link href="/ranking" className="text-sm text-accent hover:text-accent-light">
                 Ver ranking completo →
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default async function DashboardPage() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <SectionHeading eyebrow="Comunidade" title="Últimas contribuições" />
-              <Link href="/contribuicoes" className="text-sm text-gold hover:text-gold-light">
+              <Link href="/contribuicoes" className="text-sm text-accent hover:text-accent-light">
                 Ver todas →
               </Link>
             </div>

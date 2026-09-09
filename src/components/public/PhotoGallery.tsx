@@ -20,7 +20,7 @@ export function PhotoGallery() {
           key={i}
           className="card-surface flex aspect-[3/4] flex-col items-center justify-center gap-3 rounded-2xl p-6 text-center"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
             <Camera size={20} strokeWidth={1.75} />
           </span>
           <p className="text-xs text-foreground-muted">{slot.caption}</p>

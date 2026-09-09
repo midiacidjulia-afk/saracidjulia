@@ -25,8 +25,8 @@ export function ThankYou({
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (
-    <Card className="mx-auto max-w-2xl text-center glow-gold animate-fade-up">
-      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold-light">
+    <Card className="mx-auto max-w-2xl text-center glow-accent animate-fade-up">
+      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-accent-light">
         <CheckCircle2 size={32} strokeWidth={1.5} />
       </span>
 
@@ -36,8 +36,8 @@ export function ThankYou({
 
       <p className="mt-3 text-foreground-muted">Sua participação representa:</p>
 
-      <div className="mx-auto mt-5 w-fit rounded-xl border border-gold/30 bg-gold/10 px-10 py-6">
-        <p className="font-serif text-3xl text-gold-gradient">
+      <div className="mx-auto mt-5 w-fit rounded-xl border border-accent/30 bg-accent/10 px-10 py-6">
+        <p className="font-serif text-3xl text-accent-gradient">
           {cotas} {cotas === 1 ? "cota" : "cotas"}
         </p>
         <p className="mt-1 text-lg text-foreground">{formatCurrency(amount)}</p>
@@ -70,7 +70,7 @@ export function ThankYou({
 
       <div className="mt-8 flex flex-col items-center gap-2 border-t border-border pt-6">
         <LogoBadge />
-        <p className="font-serif text-sm italic text-gold-light">Juntos, vamos mais longe!</p>
+        <p className="font-serif text-sm italic text-accent-light">Juntos, vamos mais longe!</p>
       </div>
     </Card>
   );

@@ -10,7 +10,7 @@ export const metadata = {
 export default function AdminLoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-radial-glow px-5">
-      <Card className="w-full max-w-sm glow-gold">
+      <Card className="w-full max-w-sm glow-accent">
         <div className="mb-6 flex flex-col items-center gap-2 text-center">
           <LogoBadge className="h-11 w-11" />
           <h1 className="font-serif text-xl text-foreground">Painel administrativo</h1>

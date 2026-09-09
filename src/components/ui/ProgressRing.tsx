@@ -39,8 +39,8 @@ export function ProgressRing({
         />
         <defs>
           <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="var(--gold-dark)" />
-            <stop offset="100%" stopColor="var(--gold-light)" />
+            <stop offset="0%" stopColor="var(--accent-dark)" />
+            <stop offset="100%" stopColor="var(--accent-light)" />
           </linearGradient>
         </defs>
       </svg>

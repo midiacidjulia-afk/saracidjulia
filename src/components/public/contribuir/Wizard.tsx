@@ -170,7 +170,7 @@ export function Wizard({
                 <button
                   type="button"
                   onClick={() => update("cotas", Math.max(1, form.cotas - 1))}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-colors hover:border-gold/50 hover:text-foreground"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-colors hover:border-accent/50 hover:text-foreground"
                   aria-label="Diminuir cotas"
                 >
                   −
@@ -181,7 +181,7 @@ export function Wizard({
                 <button
                   type="button"
                   onClick={() => update("cotas", form.cotas + 1)}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-gold bg-gold text-xl text-black transition-colors hover:brightness-110"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-white transition-colors hover:brightness-110"
                   aria-label="Aumentar cotas"
                 >
                   +
@@ -197,8 +197,8 @@ export function Wizard({
                   onClick={() => update("cotas", n)}
                   className={`h-9 rounded-full border px-3.5 text-xs transition-colors ${
                     form.cotas === n
-                      ? "border-gold bg-gold/15 text-gold-light"
-                      : "border-border text-foreground-muted hover:border-gold/50"
+                      ? "border-accent bg-accent/15 text-accent-light"
+                      : "border-border text-foreground-muted hover:border-accent/50"
                   }`}
                 >
                   {n} {n === 1 ? "cota" : "cotas"}
@@ -206,9 +206,9 @@ export function Wizard({
               ))}
             </div>
 
-            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4 text-center">
+            <div className="rounded-lg border border-accent/30 bg-accent/10 p-4 text-center">
               <p className="text-sm text-foreground-muted">Valor total da sua participação</p>
-              <p className="font-serif text-2xl text-gold-gradient">{formatCurrency(amount)}</p>
+              <p className="font-serif text-2xl text-accent-gradient">{formatCurrency(amount)}</p>
             </div>
           </>
         ) : null}
@@ -249,8 +249,8 @@ export function Wizard({
                 </button>
               </div>
             ) : (
-              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-background-elevated px-4 py-8 text-center transition-colors hover:border-gold/50">
-                <Upload size={22} className="text-gold-light" />
+              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-background-elevated px-4 py-8 text-center transition-colors hover:border-accent/50">
+                <Upload size={22} className="text-accent-light" />
                 <span className="text-sm text-foreground">Clique para enviar o comprovante</span>
                 <span className="text-xs text-foreground-muted">PNG, JPG ou PDF · até 10MB</span>
                 <input
@@ -299,7 +299,7 @@ export function Wizard({
               </div>
               <div>
                 <dt className="text-foreground-muted">Valor</dt>
-                <dd className="text-gold-light">{formatCurrency(amount)}</dd>
+                <dd className="text-accent-light">{formatCurrency(amount)}</dd>
               </div>
             </dl>
           </div>

@@ -26,7 +26,7 @@ export function VideoMessage() {
         </div>
 
         <div
-          className="relative w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-border glow-gold"
+          className="relative w-full max-w-[280px] shrink-0 overflow-hidden rounded-2xl border border-border glow-accent"
           style={{ aspectRatio: "9 / 16" }}
         >
           <video
@@ -46,7 +46,7 @@ export function VideoMessage() {
               className="absolute inset-0 flex items-center justify-center bg-foreground/10 transition-colors hover:bg-foreground/20"
               aria-label="Assistir mensagem de Nivaldo"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold text-background-card glow-gold-sm">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-background-card glow-accent-sm">
                 <Play size={26} fill="currentColor" className="ml-1" />
               </span>
             </button>

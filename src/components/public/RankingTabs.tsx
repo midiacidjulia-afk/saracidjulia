@@ -30,7 +30,7 @@ export function RankingTabs({
             className={cn(
               "rounded-full px-4 py-2 text-sm transition-colors",
               tab === item.key
-                ? "bg-gold text-black"
+                ? "bg-accent text-white"
                 : "text-foreground-muted hover:text-foreground",
             )}
           >

@@ -23,7 +23,7 @@ export function PublicShell({ children }: { children: ReactNode }) {
             <PublicSidebar />
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-3 top-6 text-foreground-muted"
+              className="absolute right-3 top-6 text-sidebar-foreground-muted"
               aria-label="Fechar menu"
             >
               <X size={20} />
@@ -33,13 +33,13 @@ export function PublicShell({ children }: { children: ReactNode }) {
       ) : null}
 
       <div className="flex min-h-screen flex-1 flex-col">
-        <header className="flex h-16 items-center justify-between gap-3 border-b border-border bg-background-card px-5 lg:hidden">
-          <button onClick={() => setOpen(true)} aria-label="Abrir menu" className="text-foreground">
+        <header className="flex h-16 items-center justify-between gap-3 border-b border-sidebar-border bg-sidebar px-5 lg:hidden">
+          <button onClick={() => setOpen(true)} aria-label="Abrir menu" className="text-sidebar-foreground">
             <Menu size={22} />
           </button>
           <Link href="/" className="flex items-center gap-2">
             <LogoBadge className="h-7 w-7" />
-            <span className="font-serif text-sm text-foreground">Juntos pela Obra</span>
+            <span className="font-serif text-sm text-sidebar-foreground">Juntos pela Obra</span>
           </Link>
           <LinkButton href="/contribuir" size="md" className="h-9 px-4 text-xs">
             Contribuir

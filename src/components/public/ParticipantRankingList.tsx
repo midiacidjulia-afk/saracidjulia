@@ -21,17 +21,17 @@ export function ParticipantRankingList({
               className={cn(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif text-sm",
                 index === 0
-                  ? "bg-gold text-black"
+                  ? "bg-accent text-white"
                   : index === 1
-                    ? "bg-gold/50 text-black"
+                    ? "bg-accent/50 text-white"
                     : index === 2
-                      ? "bg-gold/25 text-gold-light"
+                      ? "bg-accent/25 text-accent-light"
                       : "bg-background-elevated text-foreground-muted",
               )}
             >
               {index + 1}
             </span>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif text-sm text-gold-light">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 font-serif text-sm text-accent-light">
               {initials(p.name)}
             </span>
             <div className="min-w-0 flex-1">
@@ -39,7 +39,7 @@ export function ParticipantRankingList({
               <p className="truncate text-xs text-foreground-muted">{p.churchName}</p>
             </div>
             <div className="shrink-0 text-right">
-              <p className="text-sm font-semibold text-gold-light">
+              <p className="text-sm font-semibold text-accent-light">
                 {formatNumber(p.cotas)} {p.cotas === 1 ? "cota" : "cotas"}
               </p>
               <p className="text-xs text-foreground-muted">{formatCurrency(p.amount)}</p>

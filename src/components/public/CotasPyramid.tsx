@@ -51,7 +51,7 @@ export function CotasPyramid({
                 key={i}
                 className={cn(
                   "block h-[9px] w-[9px] shrink-0 transition-colors sm:h-[11px] sm:w-[11px]",
-                  isFilled ? "bg-gold glow-gold-sm" : "bg-background-elevated border border-border",
+                  isFilled ? "bg-accent glow-accent-sm" : "bg-background-elevated border border-border",
                 )}
                 style={{
                   clipPath:

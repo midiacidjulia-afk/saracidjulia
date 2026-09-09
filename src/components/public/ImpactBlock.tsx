@@ -25,7 +25,7 @@ export function ImpactBlock({ impact }: { impact: ImpactStats }) {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {items.map((item) => (
             <Card key={item.label} className="text-center">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold-light">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
                 <item.icon size={22} strokeWidth={1.75} />
               </span>
               <p className="mt-4 font-serif text-3xl text-foreground">

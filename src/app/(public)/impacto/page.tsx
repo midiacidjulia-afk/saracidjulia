@@ -39,7 +39,7 @@ export default async function ImpactoPage() {
             <div className="flex flex-col divide-y divide-border">
               {items.map((item) => (
                 <div key={item.label} className="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold-light">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
                     <item.icon size={20} strokeWidth={1.75} />
                   </span>
                   <div>

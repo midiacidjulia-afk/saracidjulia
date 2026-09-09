@@ -17,8 +17,8 @@ export function Stepper({ current }: { current: number }) {
               <span
                 className={cn(
                   "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-colors",
-                  done && "border-gold bg-gold text-black",
-                  active && !done && "border-gold text-gold-light",
+                  done && "border-accent bg-accent text-white",
+                  active && !done && "border-accent text-accent-light",
                   !active && !done && "border-border text-foreground-muted",
                 )}
               >
@@ -27,7 +27,7 @@ export function Stepper({ current }: { current: number }) {
               <span
                 className={cn(
                   "hidden text-[11px] sm:block",
-                  active ? "text-gold-light" : "text-foreground-muted",
+                  active ? "text-accent-light" : "text-foreground-muted",
                 )}
               >
                 {label}
@@ -37,7 +37,7 @@ export function Stepper({ current }: { current: number }) {
               <div
                 className={cn(
                   "h-px flex-1",
-                  done ? "bg-gold" : "bg-border",
+                  done ? "bg-accent" : "bg-border",
                 )}
               />
             ) : null}

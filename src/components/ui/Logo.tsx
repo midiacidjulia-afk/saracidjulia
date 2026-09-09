@@ -30,7 +30,7 @@ export function LogoBadge({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold-light",
+        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-accent-light",
         className,
       )}
     >

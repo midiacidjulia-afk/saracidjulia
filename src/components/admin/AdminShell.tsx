@@ -20,7 +20,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
             <AdminSidebar />
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-3 top-6 text-foreground-muted"
+              className="absolute right-3 top-6 text-sidebar-foreground-muted"
               aria-label="Fechar menu"
             >
               <X size={20} />
@@ -30,11 +30,11 @@ export function AdminShell({ children }: { children: ReactNode }) {
       ) : null}
 
       <div className="flex min-h-screen flex-1 flex-col">
-        <header className="flex h-16 items-center gap-3 border-b border-border bg-background-card px-5 lg:hidden">
-          <button onClick={() => setOpen(true)} aria-label="Abrir menu">
+        <header className="flex h-16 items-center gap-3 border-b border-sidebar-border bg-sidebar px-5 lg:hidden">
+          <button onClick={() => setOpen(true)} aria-label="Abrir menu" className="text-sidebar-foreground">
             <Menu size={22} />
           </button>
-          <span className="font-serif text-sm text-foreground">Painel administrativo</span>
+          <span className="font-serif text-sm text-sidebar-foreground">Painel administrativo</span>
         </header>
         <main className="flex-1 bg-background p-5 sm:p-8">{children}</main>
       </div>

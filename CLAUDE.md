@@ -23,12 +23,17 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Identidade visual
 
-- Base: preto/grafite
-- Destaque: dourado
-- Texto: branco
+Alinhada à identidade oficial da Sara Nossa Terra (referência: sntzonasul.com.br) — grafite escuro nos menus e azul como destaque —, combinada com um conteúdo claro e caloroso pedido explicitamente pelo cliente.
+
+- Menu/sidebar e rodapé: grafite escuro (tokens `sidebar`/`sidebar-elevated`/`sidebar-border`/`sidebar-foreground` em `globals.css`)
+- Área de conteúdo: creme/branco claro (`background`/`background-card`), nunca volta a ficar escura — pedido explícito do cliente após ver a primeira versão ("mais leve, mais claro, que traga mais conexão e amor")
+- Destaque: azul (`accent`/`accent-light`/`accent-dark`) — substitui o dourado usado na primeira versão
+- Texto: tons neutros escuros sobre claro (`foreground`), claros sobre o grafite (`sidebar-foreground`)
 - Tipografia elegante, institucional (Playfair Display nos títulos, Inter no corpo)
 - Glow/luz sutil, animações discretas — nunca "gamificado" ou infantilizado
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
+
+Não existe arquivo de logo real da igreja — `src/components/ui/Logo.tsx` usa uma marca própria em forma de folha/chama que evoca o símbolo da Sara Nossa Terra.
 
 ## Tom de voz (regra importante)
 
