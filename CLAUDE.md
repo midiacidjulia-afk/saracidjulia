@@ -23,15 +23,18 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Identidade visual
 
-Alinhada à identidade oficial da Sara Nossa Terra (referência: sntzonasul.com.br) — grafite escuro nos menus e azul como destaque —, combinada com um conteúdo claro e caloroso pedido explicitamente pelo cliente.
+Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **azul** para marca/ação (identidade oficial da Sara Nossa Terra, referência: sntzonasul.com.br) e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
 
-- Menu/sidebar e rodapé: grafite escuro (tokens `sidebar`/`sidebar-elevated`/`sidebar-border`/`sidebar-foreground` em `globals.css`)
-- Área de conteúdo: creme/branco claro (`background`/`background-card`), nunca volta a ficar escura — pedido explícito do cliente após ver a primeira versão ("mais leve, mais claro, que traga mais conexão e amor")
-- Destaque: azul (`accent`/`accent-light`/`accent-dark`) — substitui o dourado usado na primeira versão
-- Texto: tons neutros escuros sobre claro (`foreground`), claros sobre o grafite (`sidebar-foreground`)
+- Fundo: cinza grafite unificado em toda a aplicação — `background` (#1c1c1f, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar`/`sidebar-elevated`/`sidebar-border` levemente mais escuros que o conteúdo, para o menu/rodapé se destacarem como um painel
+- Destaque de marca/ação: azul (`accent`/`accent-light`/`accent-dark`) — botões, links, navegação, elementos interativos
+- Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — pirâmide de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º), citações em itálico
+- Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
+- Texto: off-white quente (`foreground`) sobre o grafite
 - Tipografia elegante, institucional (Playfair Display nos títulos, Inter no corpo)
-- Glow/luz sutil, animações discretas — nunca "gamificado" ou infantilizado
+- Glow/luz sutil (`glow-accent`, `glow-gold`), animações discretas — nunca "gamificado" ou infantilizado
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
+
+Histórico: a primeira versão era preto/dourado; depois foi para um tema claro/creme a pedido do cliente ("mais leve, mais claro"); depois ganhou o azul da identidade oficial da SNT num modelo híbrido (menu escuro + conteúdo claro); a versão atual voltou a ser inteiramente escura ("cinza escuro, cores mais premium"), reaproveitando o dourado como segundo destaque em vez de descartá-lo.
 
 Não existe arquivo de logo real da igreja — `src/components/ui/Logo.tsx` usa uma marca própria em forma de folha/chama que evoca o símbolo da Sara Nossa Terra.
 

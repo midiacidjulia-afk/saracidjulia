@@ -206,9 +206,9 @@ export function Wizard({
               ))}
             </div>
 
-            <div className="rounded-lg border border-accent/30 bg-accent/10 p-4 text-center">
+            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4 text-center">
               <p className="text-sm text-foreground-muted">Valor total da sua participação</p>
-              <p className="font-serif text-2xl text-accent-gradient">{formatCurrency(amount)}</p>
+              <p className="font-serif text-2xl text-gold-gradient">{formatCurrency(amount)}</p>
             </div>
           </>
         ) : null}

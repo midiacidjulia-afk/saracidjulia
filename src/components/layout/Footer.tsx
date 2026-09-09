@@ -48,7 +48,7 @@ export function Footer() {
       </Container>
 
       <Container className="mt-10 flex flex-col gap-3 border-t border-sidebar-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-serif text-sm italic text-accent-light">Juntos, vamos mais longe!</p>
+        <p className="font-serif text-sm italic text-gold-light">Juntos, vamos mais longe!</p>
         <p className="text-[11px] uppercase tracking-[0.16em] text-sidebar-foreground-muted">
           Um templo renovado <span className="mx-2 text-accent-light">·</span> Mais vidas alcançadas
         </p>

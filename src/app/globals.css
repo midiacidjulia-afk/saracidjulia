@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffbf3;
-  --background-elevated: #fdf0dd;
-  --background-card: #ffffff;
-  --foreground: #262a33;
-  --foreground-muted: #767b87;
-  --border: #ede2cc;
-  --accent: #2e9bf0;
-  --accent-light: #6ec1ff;
-  --accent-dark: #1c6fb8;
-  --sidebar: #3a3a3c;
-  --sidebar-elevated: #333335;
-  --sidebar-border: #4a4a4d;
-  --sidebar-foreground: #f5f5f4;
-  --sidebar-foreground-muted: #a8a8ac;
-  --success: #16a34a;
-  --warning: #f59e0b;
-  --danger: #ef4444;
+  --background: #1c1c1f;
+  --background-elevated: #232327;
+  --background-card: #2c2c31;
+  --foreground: #f3f1ec;
+  --foreground-muted: #98979e;
+  --border: #38383e;
+  --accent: #4a90d9;
+  --accent-light: #7ec1f2;
+  --accent-dark: #2c6aa8;
+  --gold: #c9a24a;
+  --gold-light: #e4c579;
+  --gold-dark: #8f6f2d;
+  --sidebar: #17171b;
+  --sidebar-elevated: #1f1f23;
+  --sidebar-border: #2a2a2f;
+  --sidebar-foreground: #f3f1ec;
+  --sidebar-foreground-muted: #9a99a0;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
 }
 
 @theme inline {
@@ -30,6 +33,9 @@
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --color-accent-dark: var(--accent-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --color-sidebar: var(--sidebar);
   --color-sidebar-elevated: var(--sidebar-elevated);
   --color-sidebar-border: var(--sidebar-border);
@@ -54,18 +60,35 @@ body {
   color: transparent;
 }
 
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold) 55%, var(--gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(46, 155, 240, 0.14),
-    0 20px 45px -22px rgba(46, 155, 240, 0.4);
+    0 0 0 1px rgba(74, 144, 217, 0.2),
+    0 24px 50px -20px rgba(74, 144, 217, 0.4);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 8px 20px -6px rgba(46, 155, 240, 0.35);
+  box-shadow: 0 8px 24px -6px rgba(74, 144, 217, 0.4);
+}
+
+.glow-gold {
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 74, 0.2),
+    0 24px 50px -20px rgba(201, 162, 74, 0.4);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 8px 24px -6px rgba(201, 162, 74, 0.4);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(46, 155, 240, 0.12), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(74, 144, 217, 0.18), transparent 60%);
 }
 
 .card-surface {
@@ -101,7 +124,7 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.25),
     transparent
   );
   background-size: 200% 100%;
@@ -113,6 +136,6 @@ body {
 }
 
 ::selection {
-  background: rgba(46, 155, 240, 0.22);
+  background: rgba(74, 144, 217, 0.35);
   color: var(--foreground);
 }

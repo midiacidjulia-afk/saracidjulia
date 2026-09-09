@@ -14,7 +14,7 @@ export async function QrCode({
     margin: 1,
     width: 240,
     color: {
-      dark: "#262a33",
+      dark: "#1c1c1f",
       light: "#ffffff",
     },
   });

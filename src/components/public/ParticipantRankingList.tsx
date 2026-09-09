@@ -21,11 +21,11 @@ export function ParticipantRankingList({
               className={cn(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif text-sm",
                 index === 0
-                  ? "bg-accent text-white"
+                  ? "bg-gold text-background"
                   : index === 1
-                    ? "bg-accent/50 text-white"
+                    ? "bg-foreground-muted/60 text-background"
                     : index === 2
-                      ? "bg-accent/25 text-accent-light"
+                      ? "bg-gold-dark/50 text-gold-light"
                       : "bg-background-elevated text-foreground-muted",
               )}
             >
@@ -39,7 +39,7 @@ export function ParticipantRankingList({
               <p className="truncate text-xs text-foreground-muted">{p.churchName}</p>
             </div>
             <div className="shrink-0 text-right">
-              <p className="text-sm font-semibold text-accent-light">
+              <p className="text-sm font-semibold text-gold-light">
                 {formatNumber(p.cotas)} {p.cotas === 1 ? "cota" : "cotas"}
               </p>
               <p className="text-xs text-foreground-muted">{formatCurrency(p.amount)}</p>

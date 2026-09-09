@@ -16,11 +16,11 @@ export function RankingList({ churches, limit }: { churches: Church[]; limit?: n
               className={cn(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif text-sm",
                 index === 0
-                  ? "bg-accent text-white"
+                  ? "bg-gold text-background"
                   : index === 1
-                    ? "bg-accent/50 text-white"
+                    ? "bg-foreground-muted/60 text-background"
                     : index === 2
-                      ? "bg-accent/25 text-accent-light"
+                      ? "bg-gold-dark/50 text-gold-light"
                       : "bg-background-elevated text-foreground-muted",
               )}
             >
@@ -34,14 +34,14 @@ export function RankingList({ churches, limit }: { churches: Church[]; limit?: n
               </p>
               <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-background-elevated">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-accent-dark to-accent-light"
+                  className="h-full rounded-full bg-gradient-to-r from-gold-dark to-gold-light"
                   style={{ width: `${Math.max(4, (church.cotas / max) * 100)}%` }}
                 />
               </div>
             </div>
 
             <div className="shrink-0 text-right">
-              <p className="text-sm font-semibold text-accent-light">
+              <p className="text-sm font-semibold text-gold-light">
                 {formatNumber(church.cotas)} cotas
               </p>
               <p className="text-xs text-foreground-muted">{formatCurrency(church.amount)}</p>
