@@ -17,7 +17,7 @@ export function Stepper({ current }: { current: number }) {
               <span
                 className={cn(
                   "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-colors",
-                  done && "border-accent bg-accent text-white",
+                  done && "border-accent bg-accent text-sidebar",
                   active && !done && "border-accent text-accent-light",
                   !active && !done && "border-border text-foreground-muted",
                 )}

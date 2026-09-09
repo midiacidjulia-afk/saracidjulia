@@ -181,7 +181,7 @@ export function Wizard({
                 <button
                   type="button"
                   onClick={() => update("cotas", form.cotas + 1)}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-white transition-colors hover:brightness-110"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-sidebar transition-colors hover:brightness-95"
                   aria-label="Aumentar cotas"
                 >
                   +

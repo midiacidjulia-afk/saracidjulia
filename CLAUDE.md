@@ -23,16 +23,20 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Identidade visual
 
-Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **azul** para marca/ação (identidade oficial da Sara Nossa Terra, referência: sntzonasul.com.br) e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
+Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **branco pérola** para marca/ação e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
 
 - Fundo: cinza grafite unificado em toda a aplicação — `background` (#1c1c1f, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar`/`sidebar-elevated`/`sidebar-border` levemente mais escuros que o conteúdo, para o menu/rodapé se destacarem como um painel
-- Destaque de marca/ação: azul (`accent`/`accent-light`/`accent-dark`) — botões, links, navegação, elementos interativos
+- Destaque de marca/ação: branco pérola (`accent`/`accent-light`/`accent-dark`) — botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
 - Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — pirâmide de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º), citações em itálico
 - Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
 - Texto: off-white quente (`foreground`) sobre o grafite
 - Tipografia elegante, institucional (Playfair Display nos títulos, Inter no corpo)
 - Glow/luz sutil (`glow-accent`, `glow-gold`), animações discretas — nunca "gamificado" ou infantilizado
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
+- Vídeo de mensagem (Nivaldo) como banner no topo da home, antes do hero — não mais como plano de fundo full-bleed
+- Marca (`Logo.tsx`) é um desenho próprio em forma de folha/chama que evoca o símbolo da Sara Nossa Terra; não há arquivo vetorial real da marca da igreja disponível no projeto
+
+Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → **v5 (atual)**: vídeo movido para banner no topo, logo refinado, e o azul trocado por branco pérola como destaque de marca/ação.
 
 Histórico: a primeira versão era preto/dourado; depois foi para um tema claro/creme a pedido do cliente ("mais leve, mais claro"); depois ganhou o azul da identidade oficial da SNT num modelo híbrido (menu escuro + conteúdo claro); a versão atual voltou a ser inteiramente escura ("cinza escuro, cores mais premium"), reaproveitando o dourado como segundo destaque em vez de descartá-lo.
 

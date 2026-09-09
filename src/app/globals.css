@@ -7,9 +7,9 @@
   --foreground: #f3f1ec;
   --foreground-muted: #98979e;
   --border: #38383e;
-  --accent: #4a90d9;
-  --accent-light: #7ec1f2;
-  --accent-dark: #2c6aa8;
+  --accent: #e8e4d9;
+  --accent-light: #f6f3ec;
+  --accent-dark: #c7c0ac;
   --gold: #c9a24a;
   --gold-light: #e4c579;
   --gold-dark: #8f6f2d;
@@ -69,12 +69,12 @@ body {
 
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(74, 144, 217, 0.2),
-    0 24px 50px -20px rgba(74, 144, 217, 0.4);
+    0 0 0 1px rgba(232, 228, 217, 0.18),
+    0 24px 50px -20px rgba(232, 228, 217, 0.3);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 8px 24px -6px rgba(74, 144, 217, 0.4);
+  box-shadow: 0 8px 24px -6px rgba(232, 228, 217, 0.3);
 }
 
 .glow-gold {
@@ -88,7 +88,7 @@ body {
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(74, 144, 217, 0.18), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(232, 228, 217, 0.18), transparent 60%);
 }
 
 .card-surface {
@@ -136,6 +136,6 @@ body {
 }
 
 ::selection {
-  background: rgba(74, 144, 217, 0.35);
-  color: var(--foreground);
+  background: rgba(232, 228, 217, 0.35);
+  color: var(--background);
 }

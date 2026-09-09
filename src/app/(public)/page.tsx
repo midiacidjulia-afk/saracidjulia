@@ -32,6 +32,8 @@ export default async function DashboardPage() {
 
   return (
     <>
+      <VideoMessage />
+
       <Hero impact={impact} />
 
       <Container className="-mt-10 sm:-mt-14">
@@ -49,8 +51,6 @@ export default async function DashboardPage() {
           <StatCard icon={FileCheck2} value={formatNumber(stats.totalReceipts)} label="Comprovantes enviados" />
         </div>
       </Container>
-
-      <VideoMessage />
 
       <ImpactBlock impact={impact} />
 
