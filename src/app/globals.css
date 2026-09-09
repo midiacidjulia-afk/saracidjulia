@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf5ec;
-  --background-elevated: #f1e7d6;
-  --background-card: #fffdf8;
-  --foreground: #2a2c30;
-  --foreground-muted: #7c7f87;
-  --border: #e3ddd0;
-  --accent: #2f80c4;
-  --accent-light: #5aa8e0;
-  --accent-dark: #1f5a8c;
+  --background: #fffbf3;
+  --background-elevated: #fdf0dd;
+  --background-card: #ffffff;
+  --foreground: #262a33;
+  --foreground-muted: #767b87;
+  --border: #ede2cc;
+  --accent: #2e9bf0;
+  --accent-light: #6ec1ff;
+  --accent-dark: #1c6fb8;
   --sidebar: #3a3a3c;
   --sidebar-elevated: #333335;
   --sidebar-border: #4a4a4d;
   --sidebar-foreground: #f5f5f4;
   --sidebar-foreground-muted: #a8a8ac;
-  --success: #3f9c62;
-  --warning: #c98a2e;
-  --danger: #c65b4e;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
 }
 
 @theme inline {
@@ -56,16 +56,16 @@ body {
 
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(47, 128, 196, 0.12),
-    0 20px 45px -24px rgba(47, 128, 196, 0.35);
+    0 0 0 1px rgba(46, 155, 240, 0.14),
+    0 20px 45px -22px rgba(46, 155, 240, 0.4);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 8px 20px -6px rgba(47, 128, 196, 0.3);
+  box-shadow: 0 8px 20px -6px rgba(46, 155, 240, 0.35);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(47, 128, 196, 0.1), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(46, 155, 240, 0.12), transparent 60%);
 }
 
 .card-surface {
@@ -101,7 +101,7 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.5),
     transparent
   );
   background-size: 200% 100%;
@@ -113,6 +113,6 @@ body {
 }
 
 ::selection {
-  background: rgba(47, 128, 196, 0.2);
+  background: rgba(46, 155, 240, 0.22);
   color: var(--foreground);
 }

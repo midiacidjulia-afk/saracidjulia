@@ -21,7 +21,7 @@ export function Hero({ impact }: { impact: ImpactStats }) {
 
   return (
     <section className="relative overflow-hidden border-b border-border bg-radial-glow">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(47,128,196,0.08),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(46,155,240,0.1),transparent_45%)]" />
       <Container className="relative grid grid-cols-1 gap-12 py-20 sm:py-28 lg:grid-cols-[1.35fr_1fr] lg:items-center">
         <div className="flex flex-col gap-6 animate-fade-up">
           <div className="flex flex-wrap items-center justify-between gap-4">
