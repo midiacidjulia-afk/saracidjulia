@@ -16,18 +16,18 @@ import {
 } from "recharts";
 import { Card } from "@/components/ui/Card";
 
-const GOLD = "#c9a24a";
-const GOLD_LIGHT = "#e4c579";
-const SUCCESS = "#4ade80";
-const WARNING = "#fbbf24";
-const DANGER = "#f87171";
-const GRID = "#2a2a2e";
+const GOLD = "#b8862e";
+const GOLD_LIGHT = "#d6a44c";
+const SUCCESS = "#4c9a6a";
+const WARNING = "#c98a2e";
+const DANGER = "#c65b4e";
+const GRID = "#e6d9bf";
 
 const tooltipStyle = {
-  background: "#131315",
-  border: "1px solid #2a2a2e",
+  background: "#fffdf8",
+  border: "1px solid #e6d9bf",
   borderRadius: 8,
-  color: "#f6f5f2",
+  color: "#332a20",
   fontSize: 12,
 };
 
@@ -38,9 +38,9 @@ export function ChurchCotasChart({ data }: { data: { name: string; cotas: number
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={data} margin={{ left: -20 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
-          <XAxis dataKey="name" tick={{ fill: "#a3a3a8", fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={60} />
-          <YAxis tick={{ fill: "#a3a3a8", fontSize: 11 }} />
-          <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "rgba(201,162,74,0.08)" }} />
+          <XAxis dataKey="name" tick={{ fill: "#8a7a63", fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={60} />
+          <YAxis tick={{ fill: "#8a7a63", fontSize: 11 }} />
+          <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "rgba(184,134,46,0.08)" }} />
           <Bar dataKey="cotas" fill={GOLD} radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
@@ -55,8 +55,8 @@ export function CumulativeChart({ data }: { data: { date: string; cotas: number 
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={data} margin={{ left: -20 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
-          <XAxis dataKey="date" tick={{ fill: "#a3a3a8", fontSize: 11 }} />
-          <YAxis tick={{ fill: "#a3a3a8", fontSize: 11 }} />
+          <XAxis dataKey="date" tick={{ fill: "#8a7a63", fontSize: 11 }} />
+          <YAxis tick={{ fill: "#8a7a63", fontSize: 11 }} />
           <Tooltip contentStyle={tooltipStyle} />
           <Line type="monotone" dataKey="cotas" stroke={GOLD_LIGHT} strokeWidth={2} dot={false} />
         </LineChart>

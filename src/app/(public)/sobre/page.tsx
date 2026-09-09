@@ -2,9 +2,10 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
+import { PhotoGallery } from "@/components/public/PhotoGallery";
 
 export const metadata = {
-  title: "Sobre a obra | Juntos pela Obra",
+  title: "Nossa história | Juntos pela Obra",
 };
 
 export default function SobrePage() {
@@ -14,16 +15,33 @@ export default function SobrePage() {
         <Container>
           <SectionHeading
             align="center"
-            eyebrow="Sobre a obra"
-            title="Um templo renovado. Mais vidas alcançadas."
+            eyebrow="Nossa história"
+            title="Estamos transformando vidas. E você pode fazer parte disso."
+            description="Cada culto, cada oração, cada abraço na porta da igreja é parte de uma história que já mudou milhares de vidas — e que continua sendo escrita a cada domingo."
             className="mx-auto"
           />
         </Container>
       </section>
 
       <section className="py-16 sm:py-24">
+        <Container className="flex flex-col gap-10">
+          <PhotoGallery />
+
+          <div className="mx-auto max-w-2xl text-center text-foreground-muted leading-relaxed">
+            <p>
+              Por trás de cada cadeira ocupada, cada mão levantada em oração e
+              cada testemunho de recomeço, existe uma família que decidiu
+              caminhar junto com a Sara Nossa Terra — Júlia-SP. É gente comum
+              encontrando propósito, cura e comunidade. É isso que nos move.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-border py-16 sm:py-24">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div className="flex flex-col gap-6 text-foreground-muted leading-relaxed">
+            <h2 className="font-serif text-2xl text-foreground">Um templo renovado, mais vidas alcançadas</h2>
             <p>
               A igreja <strong className="text-foreground">Sara Nossa Terra — Júlia-SP</strong>{" "}
               iniciou a campanha <strong className="text-foreground">Juntos pela Obra</strong>{" "}

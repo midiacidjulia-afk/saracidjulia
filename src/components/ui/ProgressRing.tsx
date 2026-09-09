@@ -22,7 +22,7 @@ export function ProgressRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="var(--background-elevated)"
+          stroke="var(--border)"
           strokeWidth={strokeWidth}
         />
         <circle

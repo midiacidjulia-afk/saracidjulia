@@ -6,6 +6,8 @@ import { ImpactBlock } from "@/components/public/ImpactBlock";
 import { CotasPyramid } from "@/components/public/CotasPyramid";
 import { RankingList } from "@/components/public/RankingList";
 import { ContributionsList } from "@/components/public/ContributionsList";
+import { VideoMessage } from "@/components/public/VideoMessage";
+import { QrCode } from "@/components/public/QrCode";
 import { StatCard } from "@/components/ui/StatCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
@@ -47,6 +49,8 @@ export default async function DashboardPage() {
           <StatCard icon={FileCheck2} value={formatNumber(stats.totalReceipts)} label="Comprovantes enviados" />
         </div>
       </Container>
+
+      <VideoMessage />
 
       <ImpactBlock impact={impact} />
 
@@ -93,17 +97,21 @@ export default async function DashboardPage() {
       </section>
 
       <section className="border-t border-border bg-radial-glow py-16 sm:py-20">
-        <Container className="flex flex-col items-center gap-4 text-center">
-          <h2 className="max-w-xl font-serif text-3xl text-foreground sm:text-4xl">
-            Faça parte dessa história
-          </h2>
-          <p className="max-w-lg text-foreground-muted">
-            Sua cota é mais do que uma contribuição — é um passo em direção a
-            um templo renovado e mais vidas alcançadas.
-          </p>
-          <LinkButton href="/contribuir" size="lg" className="mt-2">
-            Quero fazer parte →
-          </LinkButton>
+        <Container className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16">
+          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+            <h2 className="max-w-xl font-serif text-3xl text-foreground sm:text-4xl">
+              Faça parte dessa história
+            </h2>
+            <p className="max-w-lg text-foreground-muted">
+              Sua cota é mais do que uma contribuição — é um passo em direção a
+              um templo renovado e mais vidas alcançadas.
+            </p>
+            <LinkButton href="/contribuir" size="lg" className="mt-2">
+              Quero fazer parte →
+            </LinkButton>
+          </div>
+
+          <QrCode />
         </Container>
       </section>
     </>

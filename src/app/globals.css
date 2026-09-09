@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0b;
-  --background-elevated: #131315;
-  --background-card: #17171a;
-  --foreground: #f6f5f2;
-  --foreground-muted: #a3a3a8;
-  --border: #2a2a2e;
-  --gold: #c9a24a;
-  --gold-light: #e4c579;
-  --gold-dark: #8f6f2d;
-  --success: #4ade80;
-  --warning: #fbbf24;
-  --danger: #f87171;
+  --background: #faf5ec;
+  --background-elevated: #f1e7d6;
+  --background-card: #fffdf8;
+  --foreground: #332a20;
+  --foreground-muted: #8a7a63;
+  --border: #e6d9bf;
+  --gold: #b8862e;
+  --gold-light: #d6a44c;
+  --gold-dark: #8c6420;
+  --rose: #cf7a63;
+  --rose-light: #e2a08c;
+  --success: #4c9a6a;
+  --warning: #c98a2e;
+  --danger: #c65b4e;
 }
 
 @theme inline {
@@ -25,6 +27,8 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
+  --color-rose: var(--rose);
+  --color-rose-light: var(--rose-light);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
@@ -38,22 +42,24 @@ body {
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-dark));
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold) 55%, var(--gold-light));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glow-gold {
-  box-shadow: 0 0 0 1px rgba(201, 162, 74, 0.15), 0 20px 60px -20px rgba(201, 162, 74, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(184, 134, 46, 0.12),
+    0 20px 45px -24px rgba(184, 134, 46, 0.35);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 0 24px 0 rgba(201, 162, 74, 0.25);
+  box-shadow: 0 8px 20px -6px rgba(184, 134, 46, 0.3);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(201, 162, 74, 0.16), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(184, 134, 46, 0.14), transparent 60%);
 }
 
 .card-surface {
@@ -89,7 +95,7 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(201, 162, 74, 0.35),
+    rgba(184, 134, 46, 0.4),
     transparent
   );
   background-size: 200% 100%;
@@ -101,6 +107,6 @@ body {
 }
 
 ::selection {
-  background: rgba(201, 162, 74, 0.35);
+  background: rgba(184, 134, 46, 0.25);
   color: var(--foreground);
 }
