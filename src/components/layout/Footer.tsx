@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { LogoBadge } from "@/components/ui/Logo";
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/40 bg-gold/10 font-serif text-lg text-gold-light">
-              S
-            </span>
+            <LogoBadge />
             <span className="font-serif text-base text-foreground">Juntos pela Obra</span>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
@@ -48,9 +47,10 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-10 border-t border-border pt-6">
-        <p className="text-xs text-foreground-muted">
-          &ldquo;Dai, e ser-vos-á dado...&rdquo; — Lucas 6:38
+      <Container className="mt-10 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-serif text-sm italic text-gold-light">Juntos, vamos mais longe!</p>
+        <p className="text-[11px] uppercase tracking-[0.16em] text-foreground-muted">
+          Um templo renovado <span className="mx-2 text-gold">·</span> Mais vidas alcançadas
         </p>
       </Container>
     </footer>

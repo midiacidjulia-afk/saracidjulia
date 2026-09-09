@@ -50,9 +50,13 @@ export function CotasPyramid({
               <span
                 key={i}
                 className={cn(
-                  "block h-[7px] w-[7px] rounded-[1.5px] transition-colors sm:h-[9px] sm:w-[9px]",
+                  "block h-[9px] w-[9px] shrink-0 transition-colors sm:h-[11px] sm:w-[11px]",
                   isFilled ? "bg-gold glow-gold-sm" : "bg-background-elevated border border-border",
                 )}
+                style={{
+                  clipPath:
+                    "polygon(50% 0%, 63% 35%, 100% 38%, 72% 60%, 82% 100%, 50% 78%, 18% 100%, 28% 60%, 0% 38%, 37% 35%)",
+                }}
               />
             ))}
           </div>

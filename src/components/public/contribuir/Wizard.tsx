@@ -319,7 +319,7 @@ export function Wizard({
 
           {step < 5 ? (
             <Button type="button" onClick={next}>
-              Continuar
+              Próximo passo →
             </Button>
           ) : (
             <Button type="button" onClick={handleSubmit} disabled={isPending}>
