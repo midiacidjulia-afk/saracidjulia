@@ -25,8 +25,8 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **branco pérola** para marca/ação e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
 
-- Fundo: cinza grafite unificado em toda a aplicação — `background` (#1c1c1f, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar`/`sidebar-elevated`/`sidebar-border` levemente mais escuros que o conteúdo, para o menu/rodapé se destacarem como um painel
-- Destaque de marca/ação: branco pérola (`accent`/`accent-light`/`accent-dark`) — botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
+- Fundo: cinza grafite unificado em toda a aplicação — `background` (#232327, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar`/`sidebar-elevated`/`sidebar-border` levemente mais escuros que o conteúdo, para o menu/rodapé se destacarem como um painel; tom mais claro que as versões anteriores, a pedido do cliente ("cinza um pouco mais claro")
+- Destaque de marca/ação: branco pérola (`accent`/`accent-light`/`accent-dark`) — badge da marca, botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
 - Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — pirâmide de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º), citações em itálico
 - Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
 - Texto: off-white quente (`foreground`) sobre o grafite
@@ -34,9 +34,10 @@ Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), c
 - Glow/luz sutil (`glow-accent`, `glow-gold`), animações discretas — nunca "gamificado" ou infantilizado
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
 - Vídeo de mensagem (Nivaldo) como banner no topo da home, antes do hero — não mais como plano de fundo full-bleed
-- Marca (`Logo.tsx`) é um desenho próprio em forma de folha/chama que evoca o símbolo da Sara Nossa Terra; não há arquivo vetorial real da marca da igreja disponível no projeto
+- Marca (`Logo.tsx`) é um desenho próprio em forma de folha/chama que evoca o símbolo da Sara Nossa Terra; não há arquivo vetorial real da marca da igreja disponível no projeto — o cliente enviou uma referência de logo de uma unidade parceira (Sara Saúde) com o mesmo ícone de chama em branco sobre fundo escuro, usada para calibrar o desenho e o layout do wordmark (`LogoBadge` + nome em duas linhas: nome principal + linha menor em caixa alta)
+- Wordmark do cabeçalho público (`PublicSidebar.tsx`): "Sara" / "Cidade Júlia" — nome de exibição da marca, distinto do nome institucional completo ("Sara Nossa Terra — Júlia-SP") usado no rodapé e nos textos institucionais
 
-Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → **v5 (atual)**: vídeo movido para banner no topo, logo refinado, e o azul trocado por branco pérola como destaque de marca/ação.
+Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → **v6 (atual)**: cinza de fundo mais claro, branco pérola mais intenso, badge da marca com tinta pérola (em vez de dourado) e wordmark do cabeçalho ajustado para "Sara / Cidade Júlia" a partir de referência visual enviada pelo cliente.
 
 Histórico: a primeira versão era preto/dourado; depois foi para um tema claro/creme a pedido do cliente ("mais leve, mais claro"); depois ganhou o azul da identidade oficial da SNT num modelo híbrido (menu escuro + conteúdo claro); a versão atual voltou a ser inteiramente escura ("cinza escuro, cores mais premium"), reaproveitando o dourado como segundo destaque em vez de descartá-lo.
 

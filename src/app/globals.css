@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1c1c1f;
-  --background-elevated: #232327;
-  --background-card: #2c2c31;
+  --background: #232327;
+  --background-elevated: #2a2a2f;
+  --background-card: #333338;
   --foreground: #f3f1ec;
-  --foreground-muted: #98979e;
-  --border: #38383e;
-  --accent: #e8e4d9;
-  --accent-light: #f6f3ec;
-  --accent-dark: #c7c0ac;
+  --foreground-muted: #a0a0a7;
+  --border: #3f3f47;
+  --accent: #ede9dd;
+  --accent-light: #fbf9f3;
+  --accent-dark: #cfc8b3;
   --gold: #c9a24a;
   --gold-light: #e4c579;
   --gold-dark: #8f6f2d;
-  --sidebar: #17171b;
-  --sidebar-elevated: #1f1f23;
-  --sidebar-border: #2a2a2f;
+  --sidebar: #1c1c20;
+  --sidebar-elevated: #242428;
+  --sidebar-border: #2f2f35;
   --sidebar-foreground: #f3f1ec;
-  --sidebar-foreground-muted: #9a99a0;
+  --sidebar-foreground-muted: #a4a3aa;
   --success: #34d399;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -69,12 +69,12 @@ body {
 
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(232, 228, 217, 0.18),
-    0 24px 50px -20px rgba(232, 228, 217, 0.3);
+    0 0 0 1px rgba(237, 233, 221, 0.18),
+    0 24px 50px -20px rgba(237, 233, 221, 0.3);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 8px 24px -6px rgba(232, 228, 217, 0.3);
+  box-shadow: 0 8px 24px -6px rgba(237, 233, 221, 0.3);
 }
 
 .glow-gold {
@@ -88,7 +88,7 @@ body {
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(232, 228, 217, 0.18), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(237, 233, 221, 0.18), transparent 60%);
 }
 
 .card-surface {
@@ -136,6 +136,6 @@ body {
 }
 
 ::selection {
-  background: rgba(232, 228, 217, 0.35);
+  background: rgba(237, 233, 221, 0.35);
   color: var(--background);
 }

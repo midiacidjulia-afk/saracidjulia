@@ -14,13 +14,13 @@ export function LogoMark({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <path
-        d="M12.6 1.6C8.4 4.4 5.2 9 5.2 13.3A6.8 6.8 0 0 0 12 20a6.8 6.8 0 0 0 6.8-6.7c0-2.5-1.2-4.7-2.9-6.3.5 1.7 0 3.2-1.1 4.3-.6-4-1.7-7.3-2.2-9.7Z"
+        d="M13 1.3C9 4.3 6.1 8.6 6.1 12.9A5.95 5.95 0 0 0 12 18.9a5.95 5.95 0 0 0 5.9-5.9c0-2.2-1-4.2-2.5-5.6.4 1.5 0 2.8-.9 3.7-.5-4-1.4-6.9-1.5-9.8Z"
         fill="currentColor"
       />
       <path
-        d="M12 20c-.3-2.6.1-5 1.5-7"
+        d="M12 18.9c-.3-2.2.1-4.3 1.3-6.1"
         stroke="var(--background)"
-        strokeWidth="1.3"
+        strokeWidth="1.1"
         strokeLinecap="round"
         fill="none"
       />
@@ -32,7 +32,7 @@ export function LogoBadge({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold-light",
+        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light",
         className,
       )}
     >
