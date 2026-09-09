@@ -162,34 +162,51 @@ export function Wizard({
 
         {step === 2 ? (
           <>
-            <Field label="Quantas cotas você quer fazer parte?" hint={`Cada cota vale ${formatCurrency(settings.cotaValue)}.`}>
-              <div className="flex flex-wrap gap-2">
-                {cotaPresets.map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    onClick={() => update("cotas", n)}
-                    className={`h-10 rounded-full border px-4 text-sm transition-colors ${
-                      form.cotas === n
-                        ? "border-gold bg-gold text-black"
-                        : "border-border text-foreground-muted hover:border-gold/50"
-                    }`}
-                  >
-                    {n} {n === 1 ? "cota" : "cotas"}
-                  </button>
-                ))}
+            <Field
+              label="Quantas cotas você quer fazer parte?"
+              hint={`1 cota = ${formatCurrency(settings.cotaValue)}`}
+            >
+              <div className="flex items-center justify-center gap-6 py-2">
+                <button
+                  type="button"
+                  onClick={() => update("cotas", Math.max(1, form.cotas - 1))}
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-colors hover:border-gold/50 hover:text-foreground"
+                  aria-label="Diminuir cotas"
+                >
+                  −
+                </button>
+                <span className="w-20 text-center font-serif text-4xl text-foreground">
+                  {form.cotas}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => update("cotas", form.cotas + 1)}
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-gold bg-gold text-xl text-black transition-colors hover:brightness-110"
+                  aria-label="Aumentar cotas"
+                >
+                  +
+                </button>
               </div>
             </Field>
-            <Field label="Ou digite a quantidade">
-              <input
-                type="number"
-                min={1}
-                className={inputClass}
-                value={form.cotas}
-                onChange={(e) => update("cotas", Math.max(1, Number(e.target.value) || 1))}
-              />
-            </Field>
-            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
+
+            <div className="flex flex-wrap justify-center gap-2">
+              {cotaPresets.map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => update("cotas", n)}
+                  className={`h-9 rounded-full border px-3.5 text-xs transition-colors ${
+                    form.cotas === n
+                      ? "border-gold bg-gold/15 text-gold-light"
+                      : "border-border text-foreground-muted hover:border-gold/50"
+                  }`}
+                >
+                  {n} {n === 1 ? "cota" : "cotas"}
+                </button>
+              ))}
+            </div>
+
+            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4 text-center">
               <p className="text-sm text-foreground-muted">Valor total da sua participação</p>
               <p className="font-serif text-2xl text-gold-gradient">{formatCurrency(amount)}</p>
             </div>

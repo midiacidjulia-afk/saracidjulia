@@ -27,8 +27,8 @@ export default async function ImpactoPage() {
           <SectionHeading
             align="center"
             eyebrow="Impacto real"
-            title="Reformar o templo é preparar o lugar para o que Deus ainda vai fazer"
-            description="Cada cota preenchida se traduz em vidas alcançadas, famílias acompanhadas e um espaço mais preparado para acolher quem chega."
+            title="Mais do que um templo. Mais vidas."
+            description="Cada cota representa muito mais do que R$ 100 — ela representa um espaço melhor para acolher, ensinar, cuidar, servir e alcançar novas pessoas."
             className="mx-auto"
           />
         </Container>

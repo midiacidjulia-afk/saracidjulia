@@ -3,7 +3,7 @@ import { FileCheck2, Landmark, Users } from "lucide-react";
 import { Hero } from "@/components/public/Hero";
 import { GoalCard } from "@/components/public/GoalCard";
 import { ImpactBlock } from "@/components/public/ImpactBlock";
-import { CotasGrid } from "@/components/public/CotasGrid";
+import { CotasPyramid } from "@/components/public/CotasPyramid";
 import { RankingList } from "@/components/public/RankingList";
 import { ContributionsList } from "@/components/public/ContributionsList";
 import { StatCard } from "@/components/ui/StatCard";
@@ -30,7 +30,7 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <Hero />
+      <Hero impact={impact} />
 
       <Container className="-mt-10 sm:-mt-14">
         <GoalCard
@@ -62,7 +62,9 @@ export default async function DashboardPage() {
               Ver todas as cotas
             </LinkButton>
           </div>
-          <CotasGrid total={settings.totalCotas} filled={stats.totalCotasFilled} limit={300} />
+          <div className="flex justify-center">
+            <CotasPyramid total={settings.totalCotas} filled={stats.totalCotasFilled} maxCells={300} />
+          </div>
         </Container>
       </section>
 
