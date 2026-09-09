@@ -1,0 +1,70 @@
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Card } from "@/components/ui/Card";
+import { LinkButton } from "@/components/ui/Button";
+
+export const metadata = {
+  title: "Sobre a obra | Juntos pela Obra",
+};
+
+export default function SobrePage() {
+  return (
+    <>
+      <section className="border-b border-border bg-radial-glow py-16 sm:py-24">
+        <Container>
+          <SectionHeading
+            align="center"
+            eyebrow="Sobre a obra"
+            title="Um templo renovado. Mais vidas alcançadas."
+            className="mx-auto"
+          />
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr]">
+          <div className="flex flex-col gap-6 text-foreground-muted leading-relaxed">
+            <p>
+              A igreja <strong className="text-foreground">Sara Nossa Terra — Júlia-SP</strong>{" "}
+              iniciou a campanha <strong className="text-foreground">Juntos pela Obra</strong>{" "}
+              com um propósito claro: reformar o templo para preparar um espaço
+              ainda melhor para acolher, cuidar e transformar vidas.
+            </p>
+            <p>
+              Ao longo dos anos, este templo tem sido lugar de encontro, cura e
+              recomeço para milhares de pessoas. Hoje, sentimos que é hora de
+              renovar essa casa — não apenas em sua estrutura física, mas como
+              um passo de fé para tudo o que ainda está por vir.
+            </p>
+            <p>
+              A meta é arrecadar <strong className="text-foreground">R$ 100.000,00</strong>,
+              divididos em <strong className="text-foreground">1.000 cotas de R$ 100,00</strong>.
+              Cada cota é um convite à participação coletiva — não uma doação
+              distante, mas um gesto de pertencimento a algo maior que estamos
+              construindo juntos.
+            </p>
+            <p>
+              Acreditamos, como está escrito em Lucas 6:38, que{" "}
+              <em>&ldquo;dai, e ser-vos-á dado&rdquo;</em>. Cada contribuição
+              feita com generosidade se torna semente para uma colheita de
+              vidas alcançadas e transformadas.
+            </p>
+          </div>
+
+          <Card className="h-fit">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+              Fale com a coordenação da obra
+            </p>
+            <p className="mt-3 text-sm text-foreground-muted leading-relaxed">
+              Dúvidas sobre a campanha ou sobre como enviar seu comprovante?
+              Fale diretamente com Nivaldo, responsável pela obra.
+            </p>
+            <LinkButton href="/contribuir" className="mt-5 w-full">
+              Quero fazer parte
+            </LinkButton>
+          </Card>
+        </Container>
+      </section>
+    </>
+  );
+}
