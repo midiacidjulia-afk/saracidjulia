@@ -34,9 +34,6 @@ export function ContributionsList({
               <p className="truncate text-xs text-foreground-muted">{c.churchName}</p>
             </div>
             <div className="shrink-0 text-right">
-              <p className="text-sm font-semibold text-accent-light">
-                {c.cotas} {c.cotas === 1 ? "cota" : "cotas"}
-              </p>
               <p className="text-xs text-foreground-muted">{formatRelativeTime(c.createdAt)}</p>
             </div>
           </li>
