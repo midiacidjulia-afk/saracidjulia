@@ -12,8 +12,8 @@ export function StatCard({
 }) {
   return (
     <Card className="flex items-center gap-4 p-5">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-light">
-        <Icon size={20} strokeWidth={1.75} />
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/[0.06] text-accent-light">
+        <Icon size={20} strokeWidth={1.6} />
       </span>
       <div>
         <p className="font-serif text-2xl text-foreground">{value}</p>

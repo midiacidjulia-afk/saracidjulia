@@ -1,6 +1,7 @@
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
+import { LogoBadge } from "@/components/ui/Logo";
 import { formatCurrency } from "@/lib/utils";
 
 export function ThankYou({
@@ -16,7 +17,6 @@ export function ThankYou({
   whatsappNumber: string;
   whatsappContactName: string;
 }) {
-  const firstName = name.trim().split(/\s+/)[0] ?? "";
   const message = encodeURIComponent(
     `Olá, ${whatsappContactName}! Sou ${name} e acabei de fazer parte da campanha Juntos pela Obra com ${cotas} ${
       cotas === 1 ? "cota" : "cotas"
@@ -26,36 +26,33 @@ export function ThankYou({
 
   return (
     <Card className="mx-auto max-w-2xl text-center glow-gold animate-fade-up">
-      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold-light">
+      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-success/30 bg-success/[0.08] text-success">
         <CheckCircle2 size={32} strokeWidth={1.5} />
       </span>
 
       <h1 className="mt-6 font-serif text-3xl text-foreground">
-        Obrigado por fazer parte, {firstName}!
+        Obrigado por fazer parte dessa obra!
       </h1>
 
-      <p className="mt-3 text-foreground-muted">
-        Sua participação com{" "}
-        <strong className="text-gold-light">
-          {cotas} {cotas === 1 ? "cota" : "cotas"}
-        </strong>{" "}
-        no valor de <strong className="text-gold-light">{formatCurrency(amount)}</strong> foi
-        registrada. Agora falta um último passo.
-      </p>
+      <p className="mt-3 text-foreground-muted">Sua participação representa:</p>
 
-      <div className="mt-8 rounded-xl border border-gold/30 bg-gold/10 p-6 text-left">
-        <p className="text-sm font-semibold text-foreground">
-          Envie seu comprovante pelo WhatsApp
+      <div className="mx-auto mt-5 w-fit rounded-xl border border-gold/30 bg-gold/10 px-10 py-6">
+        <p className="font-serif text-3xl text-gold-gradient">
+          {cotas} {cotas === 1 ? "cota" : "cotas"}
         </p>
-        <p className="mt-1 text-sm text-foreground-muted">
-          Para confirmarmos sua cota, envie o comprovante da oferta para{" "}
-          {whatsappContactName}, responsável pela obra.
+        <p className="mt-1 text-lg text-foreground">{formatCurrency(amount)}</p>
+      </div>
+
+      <div className="mt-8 text-left">
+        <p className="text-sm text-foreground-muted">
+          Agora envie o comprovante pelo WhatsApp de {whatsappContactName}, responsável
+          pela obra, para confirmarmos sua cota.
         </p>
         <LinkButton
           href={whatsappHref}
           target="_blank"
           size="lg"
-          className="mt-4 w-full sm:w-auto"
+          className="mt-4 w-full"
         >
           <MessageCircle size={18} />
           Enviar comprovante pelo WhatsApp
@@ -69,6 +66,11 @@ export function ThankYou({
         <LinkButton href="/cotas" variant="ghost">
           Ver nossas cotas
         </LinkButton>
+      </div>
+
+      <div className="mt-8 flex flex-col items-center gap-2 border-t border-border pt-6">
+        <LogoBadge />
+        <p className="font-serif text-sm italic text-gold-light">Juntos, vamos mais longe!</p>
       </div>
     </Card>
   );

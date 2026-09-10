@@ -73,8 +73,8 @@ export function ParticipantsTable({ participants }: { participants: Participant[
                 className={cn(
                   "rounded-full border px-3 py-1.5 text-xs transition-colors",
                   status === f.key
-                    ? "border-gold bg-gold text-black"
-                    : "border-border text-foreground-muted hover:border-gold/50",
+                    ? "border-accent bg-accent text-sidebar"
+                    : "border-border text-foreground-muted hover:border-accent/40",
                 )}
               >
                 {f.label}
@@ -104,7 +104,10 @@ export function ParticipantsTable({ participants }: { participants: Participant[
           </thead>
           <tbody>
             {filtered.map((p) => (
-              <tr key={p.id} className="border-b border-border last:border-0">
+              <tr
+                key={p.id}
+                className="border-b border-border transition-colors last:border-0 hover:bg-background-elevated/50"
+              >
                 <td className="px-5 py-3 text-foreground">{p.name}</td>
                 <td className="px-5 py-3 text-foreground-muted">{p.whatsapp}</td>
                 <td className="px-5 py-3 text-foreground-muted">{p.churchName}</td>

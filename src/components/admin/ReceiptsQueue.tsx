@@ -49,7 +49,7 @@ export function ReceiptsQueue({ participants }: { participants: Participant[] })
         <ul className="divide-y divide-border">
           {items.map((p) => (
             <li key={p.id} className="flex flex-wrap items-center gap-4 p-4 sm:p-5">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif text-sm text-gold-light">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 font-serif text-sm text-accent-light">
                 {initials(p.name)}
               </span>
 
@@ -61,7 +61,7 @@ export function ReceiptsQueue({ participants }: { participants: Participant[] })
               </div>
 
               <div className="text-right">
-                <p className="text-sm font-semibold text-gold-light">
+                <p className="text-sm font-semibold text-accent-light">
                   {p.cotas} {p.cotas === 1 ? "cota" : "cotas"}
                 </p>
                 <p className="text-xs text-foreground-muted">{formatCurrency(p.amount)}</p>

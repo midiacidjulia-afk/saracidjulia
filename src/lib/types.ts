@@ -21,6 +21,7 @@ export type Participant = {
   date: string;
   status: ReceiptStatus;
   createdAt: string;
+  hideFromRanking: boolean;
 };
 
 export type Contribution = {

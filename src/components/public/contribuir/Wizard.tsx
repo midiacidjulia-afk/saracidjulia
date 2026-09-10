@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { CalendarDays, Loader2, Upload, X } from "lucide-react";
+import { CalendarDays, Check, Copy, Loader2, Upload, X } from "lucide-react";
 import { Stepper } from "./Stepper";
 import { ThankYou } from "./ThankYou";
 import { Field, inputClass } from "@/components/ui/Field";
@@ -12,6 +12,7 @@ import { submitContribution } from "@/app/(public)/contribuir/actions";
 import type { Church, Settings } from "@/lib/types";
 
 const cotaPresets = [1, 5, 10, 20, 50];
+const pixKey = "cidadejuliaev@cesnt.com.br";
 
 type FormState = {
   name: string;
@@ -21,6 +22,7 @@ type FormState = {
   cotas: number;
   contributionDate: string;
   receipt: File | null;
+  hideFromRanking: boolean;
 };
 
 function todayISO() {
@@ -38,6 +40,7 @@ export function Wizard({
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [pixCopied, setPixCopied] = useState(false);
   const [form, setForm] = useState<FormState>({
     name: "",
     whatsapp: "",
@@ -46,6 +49,7 @@ export function Wizard({
     cotas: 1,
     contributionDate: todayISO(),
     receipt: null,
+    hideFromRanking: false,
   });
 
   const amount = form.cotas * settings.cotaValue;
@@ -75,6 +79,16 @@ export function Wizard({
     setStep((s) => Math.max(1, s - 1));
   }
 
+  async function copyPixKey() {
+    try {
+      await navigator.clipboard.writeText(pixKey);
+      setPixCopied(true);
+      setTimeout(() => setPixCopied(false), 2000);
+    } catch {
+      // clipboard indisponível — a chave já está visível para copiar manualmente
+    }
+  }
+
   function handleSubmit() {
     setError(null);
     const data = new FormData();
@@ -85,6 +99,7 @@ export function Wizard({
     data.set("cotas", String(form.cotas));
     data.set("amount", String(amount));
     data.set("contributionDate", form.contributionDate);
+    data.set("hideFromRanking", String(form.hideFromRanking));
     if (form.receipt) data.set("receipt", form.receipt);
 
     startTransition(async () => {
@@ -162,34 +177,51 @@ export function Wizard({
 
         {step === 2 ? (
           <>
-            <Field label="Quantas cotas você quer fazer parte?" hint={`Cada cota vale ${formatCurrency(settings.cotaValue)}.`}>
-              <div className="flex flex-wrap gap-2">
-                {cotaPresets.map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    onClick={() => update("cotas", n)}
-                    className={`h-10 rounded-full border px-4 text-sm transition-colors ${
-                      form.cotas === n
-                        ? "border-gold bg-gold text-black"
-                        : "border-border text-foreground-muted hover:border-gold/50"
-                    }`}
-                  >
-                    {n} {n === 1 ? "cota" : "cotas"}
-                  </button>
-                ))}
+            <Field
+              label="Quantas cotas você quer fazer parte?"
+              hint={`1 cota = ${formatCurrency(settings.cotaValue)}`}
+            >
+              <div className="flex items-center justify-center gap-6 py-2">
+                <button
+                  type="button"
+                  onClick={() => update("cotas", Math.max(1, form.cotas - 1))}
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-all active:scale-95 hover:border-accent/40 hover:text-foreground"
+                  aria-label="Diminuir cotas"
+                >
+                  −
+                </button>
+                <span className="w-20 text-center font-serif text-4xl text-foreground">
+                  {form.cotas}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => update("cotas", form.cotas + 1)}
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-sidebar transition-all glow-accent-sm active:scale-95 hover:brightness-95"
+                  aria-label="Aumentar cotas"
+                >
+                  +
+                </button>
               </div>
             </Field>
-            <Field label="Ou digite a quantidade">
-              <input
-                type="number"
-                min={1}
-                className={inputClass}
-                value={form.cotas}
-                onChange={(e) => update("cotas", Math.max(1, Number(e.target.value) || 1))}
-              />
-            </Field>
-            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
+
+            <div className="flex flex-wrap justify-center gap-2">
+              {cotaPresets.map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => update("cotas", n)}
+                  className={`h-9 rounded-full border px-3.5 text-xs transition-colors ${
+                    form.cotas === n
+                      ? "border-accent bg-accent/[0.1] text-accent-light"
+                      : "border-border text-foreground-muted hover:border-accent/40"
+                  }`}
+                >
+                  {n} {n === 1 ? "cota" : "cotas"}
+                </button>
+              ))}
+            </div>
+
+            <div className="rounded-xl border border-gold/25 bg-gold/[0.06] p-5 text-center">
               <p className="text-sm text-foreground-muted">Valor total da sua participação</p>
               <p className="font-serif text-2xl text-gold-gradient">{formatCurrency(amount)}</p>
             </div>
@@ -215,25 +247,43 @@ export function Wizard({
         ) : null}
 
         {step === 4 ? (
-          <Field
-            label="Comprovante (opcional)"
-            hint="Imagem ou PDF, até 10MB. Você também poderá enviar pelo WhatsApp na próxima tela."
-          >
+          <>
+            <div className="rounded-xl border border-gold/25 bg-gold/[0.06] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-light">
+                Faça sua oferta via Pix
+              </p>
+              <div className="mt-2.5 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <span className="break-all font-mono text-sm text-foreground">{pixKey}</span>
+                <button
+                  type="button"
+                  onClick={copyPixKey}
+                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs text-gold-light transition-colors hover:bg-gold/10"
+                >
+                  {pixCopied ? <Check size={14} /> : <Copy size={14} />}
+                  {pixCopied ? "Copiado!" : "Copiar chave"}
+                </button>
+              </div>
+            </div>
+
+            <Field
+              label="Comprovante (opcional)"
+              hint="Imagem ou PDF, até 10MB. Você também poderá enviar pelo WhatsApp na próxima tela."
+            >
             {form.receipt ? (
-              <div className="flex items-center justify-between rounded-lg border border-border bg-background-elevated px-4 py-3">
+              <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3.5">
                 <span className="truncate text-sm text-foreground">{form.receipt.name}</span>
                 <button
                   type="button"
                   onClick={() => update("receipt", null)}
-                  className="text-foreground-muted hover:text-danger"
+                  className="text-foreground-muted transition-colors hover:text-danger"
                   aria-label="Remover arquivo"
                 >
                   <X size={16} />
                 </button>
               </div>
             ) : (
-              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-background-elevated px-4 py-8 text-center transition-colors hover:border-gold/50">
-                <Upload size={22} className="text-gold-light" />
+              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-background-elevated px-4 py-9 text-center transition-colors hover:border-accent/40 hover:bg-background-card">
+                <Upload size={22} className="text-accent-light" />
                 <span className="text-sm text-foreground">Clique para enviar o comprovante</span>
                 <span className="text-xs text-foreground-muted">PNG, JPG ou PDF · até 10MB</span>
                 <input
@@ -251,7 +301,8 @@ export function Wizard({
                 />
               </label>
             )}
-          </Field>
+            </Field>
+          </>
         ) : null}
 
         {step === 5 ? (
@@ -259,7 +310,7 @@ export function Wizard({
             <p className="text-sm text-foreground-muted">
               Revise seus dados antes de finalizar sua participação.
             </p>
-            <dl className="grid grid-cols-2 gap-4 rounded-lg border border-border bg-background-elevated p-4 text-sm">
+            <dl className="grid grid-cols-2 gap-4 rounded-xl border border-border bg-background-elevated p-5 text-sm">
               <div>
                 <dt className="text-foreground-muted">Nome</dt>
                 <dd className="text-foreground">{form.name}</dd>
@@ -282,9 +333,21 @@ export function Wizard({
               </div>
               <div>
                 <dt className="text-foreground-muted">Valor</dt>
-                <dd className="text-gold-light">{formatCurrency(amount)}</dd>
+                <dd className="text-accent-light">{formatCurrency(amount)}</dd>
               </div>
             </dl>
+
+            <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-background-elevated p-4 text-sm transition-colors hover:border-accent/30">
+              <input
+                type="checkbox"
+                checked={form.hideFromRanking}
+                onChange={(e) => update("hideFromRanking", e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-accent"
+              />
+              <span className="text-foreground-muted">
+                Prefiro não aparecer no ranking público
+              </span>
+            </label>
           </div>
         ) : null}
 
@@ -302,7 +365,7 @@ export function Wizard({
 
           {step < 5 ? (
             <Button type="button" onClick={next}>
-              Continuar
+              {step === 4 && !form.receipt ? "Enviar comprovante depois →" : "Próximo passo →"}
             </Button>
           ) : (
             <Button type="button" onClick={handleSubmit} disabled={isPending}>

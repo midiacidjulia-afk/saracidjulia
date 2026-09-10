@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0b;
-  --background-elevated: #131315;
-  --background-card: #17171a;
-  --foreground: #f6f5f2;
-  --foreground-muted: #a3a3a8;
-  --border: #2a2a2e;
-  --gold: #c9a24a;
-  --gold-light: #e4c579;
-  --gold-dark: #8f6f2d;
-  --success: #4ade80;
+  --background: #0d1420;
+  --background-elevated: #141e2f;
+  --background-card: #1a2739;
+  --foreground: #f2efe6;
+  --foreground-muted: #93a1b6;
+  --border: #263349;
+  --accent: #d4af6a;
+  --accent-light: #e8c98c;
+  --accent-dark: #a9803a;
+  --gold: #d4af6a;
+  --gold-light: #e8c98c;
+  --gold-dark: #a9803a;
+  --sidebar: #070c15;
+  --sidebar-elevated: #0f1723;
+  --sidebar-border: #1c2839;
+  --sidebar-foreground: #f2efe6;
+  --sidebar-foreground-muted: #8393aa;
+  --success: #34d399;
   --warning: #fbbf24;
   --danger: #f87171;
 }
@@ -22,9 +30,17 @@
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-elevated: var(--sidebar-elevated);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-foreground-muted: var(--sidebar-foreground-muted);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
@@ -37,28 +53,50 @@ body {
   color: var(--foreground);
 }
 
-.text-gold-gradient {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-dark));
+.text-accent-gradient {
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent) 55%, var(--accent-light));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold) 55%, var(--gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-accent {
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 106,0.1),
+    0 24px 48px -28px rgba(212, 175, 106,0.22);
+}
+
+.glow-accent-sm {
+  box-shadow: 0 10px 24px -12px rgba(212, 175, 106,0.2);
+}
+
 .glow-gold {
-  box-shadow: 0 0 0 1px rgba(201, 162, 74, 0.15), 0 20px 60px -20px rgba(201, 162, 74, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 106,0.14),
+    0 24px 48px -28px rgba(212, 175, 106,0.3);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 0 24px 0 rgba(201, 162, 74, 0.25);
+  box-shadow: 0 10px 24px -12px rgba(212, 175, 106,0.28);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(201, 162, 74, 0.16), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 106,0.1), transparent 60%);
 }
 
 .card-surface {
   background: linear-gradient(180deg, var(--background-card), var(--background-elevated));
   border: 1px solid var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 16px 40px -32px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes fade-up {
@@ -77,11 +115,11 @@ body {
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
+  from {
+    background-position: -150% 0;
   }
-  100% {
-    background-position: 200% 0;
+  to {
+    background-position: 250% 0;
   }
 }
 
@@ -89,11 +127,11 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(201, 162, 74, 0.35),
+    rgba(255, 255, 255, 0.16),
     transparent
   );
   background-size: 200% 100%;
-  animation: shimmer 2.5s ease-in-out infinite;
+  animation: shimmer 1.6s ease-out 0.3s 1 both;
 }
 
 * {
@@ -101,6 +139,6 @@ body {
 }
 
 ::selection {
-  background: rgba(201, 162, 74, 0.35);
-  color: var(--foreground);
+  background: rgba(212, 175, 106,0.32);
+  color: var(--background);
 }

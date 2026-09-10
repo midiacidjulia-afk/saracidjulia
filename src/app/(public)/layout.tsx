@@ -1,12 +1,11 @@
-import { Header } from "@/components/layout/Header";
+import { PublicShell } from "@/components/layout/PublicShell";
 import { Footer } from "@/components/layout/Footer";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header />
-      <main className="flex-1">{children}</main>
+      <PublicShell>{children}</PublicShell>
       <Footer />
       <MobileNav />
     </>

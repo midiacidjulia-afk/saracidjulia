@@ -19,4 +19,4 @@ export function Field({
 }
 
 export const inputClass =
-  "h-11 w-full rounded-lg border border-border bg-background-elevated px-3.5 text-sm text-foreground placeholder:text-foreground-muted/60 outline-none transition-colors focus:border-gold";
+  "h-12 w-full rounded-xl border border-border bg-background-elevated px-4 text-sm text-foreground placeholder:text-foreground-muted/60 outline-none transition-all focus:border-accent/60 focus:ring-2 focus:ring-accent/15";

@@ -22,7 +22,7 @@ export function NewChurchForm() {
   return (
     <Card>
       <p className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground">
-        <Plus size={16} className="text-gold-light" />
+        <Plus size={16} className="text-accent-light" />
         Cadastrar igreja
       </p>
       <form action={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end">

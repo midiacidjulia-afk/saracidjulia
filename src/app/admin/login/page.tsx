@@ -1,5 +1,6 @@
 import { LoginForm } from "@/components/admin/LoginForm";
 import { Card } from "@/components/ui/Card";
+import { LogoBadge } from "@/components/ui/Logo";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 export const metadata = {
@@ -9,11 +10,9 @@ export const metadata = {
 export default function AdminLoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-radial-glow px-5">
-      <Card className="w-full max-w-sm glow-gold">
+      <Card className="w-full max-w-sm glow-accent">
         <div className="mb-6 flex flex-col items-center gap-2 text-center">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gold/10 font-serif text-lg text-gold-light">
-            S
-          </span>
+          <LogoBadge className="h-11 w-11" />
           <h1 className="font-serif text-xl text-foreground">Painel administrativo</h1>
           <p className="text-sm text-foreground-muted">Juntos pela Obra — Sara Nossa Terra</p>
         </div>
