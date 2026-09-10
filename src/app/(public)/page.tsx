@@ -67,7 +67,7 @@ export default async function DashboardPage() {
       </section>
 
       <section className="border-t border-border pb-20 pt-20 sm:pb-28 sm:pt-28">
-        <Container className="mx-auto flex max-w-2xl flex-col gap-6">
+        <Container className="mx-auto flex max-w-3xl flex-col gap-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Comunidade" title="Últimas contribuições" />
             <Link href="/contribuicoes" className="text-sm text-accent hover:text-accent-light">

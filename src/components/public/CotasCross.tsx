@@ -35,7 +35,7 @@ export function CotasCross({
   );
 
   return (
-    <div className="flex flex-col items-center gap-[3px]">
+    <div className="flex flex-col items-center gap-[4px] sm:gap-[5px]">
       {rows.map((rowLength, rowIndex) => {
         const rowStart = rowStarts[rowIndex];
         const cells = Array.from(
@@ -44,12 +44,12 @@ export function CotasCross({
         );
 
         return (
-          <div key={rowIndex} className="flex gap-[3px]">
+          <div key={rowIndex} className="flex gap-[4px] sm:gap-[5px]">
             {cells.map((isFilled, i) => (
               <span
                 key={i}
                 className={cn(
-                  "block h-[9px] w-[9px] shrink-0 transition-colors duration-300 sm:h-[11px] sm:w-[11px]",
+                  "block h-[13px] w-[13px] shrink-0 transition-colors duration-300 sm:h-[17px] sm:w-[17px] lg:h-[20px] lg:w-[20px]",
                   isFilled
                     ? "bg-gradient-to-b from-gold-light to-gold glow-gold-sm"
                     : "bg-background-elevated border border-border/70",

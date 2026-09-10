@@ -1,35 +1,31 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Marca em forma de chama, aproximada a partir do logo real enviado pelo
- * cliente (chama/folha branca sobre fundo escuro, ao lado do wordmark
- * "Sara Nossa Terra — Cidade Júlia"). Como a imagem chegou colada no chat
- * (sem arquivo anexado), este é um redesenho manual — não uma extração
- * vetorial exata do arquivo original.
+ * Marca em forma de chama de duas pétalas, aproximada a partir do logo real
+ * enviado pelo cliente (chama/folha branca sobre fundo escuro, ao lado do
+ * wordmark "Sara Nossa Terra — Cidade Júlia"). Como a imagem chegou colada
+ * no chat (sem arquivo anexado), este é um redesenho manual — não uma
+ * extração vetorial exata do arquivo original. Duas pétalas simples e sem
+ * autointerseção (uma alta à esquerda, uma mais baixa e "atrás" à direita)
+ * evitam o efeito de bico/garra que uma curva interna mal calculada causava
+ * na versão anterior.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 32 44"
       fill="none"
       className={cn("h-5 w-5", className)}
       aria-hidden="true"
     >
       <path
-        d="M12.4 1C9.6 3.6 7.6 6.6 7.6 9.6c0 1.6.6 2.9 1.6 3.8-.9-2.8-.4-5.4 1.4-7.7-.3 2.7.1 5.2 1.6 7.1 1.1 1.4 1.4 2.9 1 4.5C14 15.8 15.3 13.5 15.3 11c0-1.7-.8-3.2-2-4.4.8.3 1.5.8 2.1 1.5-.4-2.9-1.4-5.1-3-7.1Z"
+        d="M19 40C28 34 29 22 23 14C20 20 19 30 19 40Z"
         fill="currentColor"
+        opacity="0.82"
       />
       <path
-        d="M9.4 12.6c.6 2.9 2 5 4.2 6.3-2.6.6-4.8-.1-6.2-2.1-1-1.5-1.2-3.2-.6-5"
+        d="M17 40C2 32 1 16 11 4C15 12 16 26 17 40Z"
         fill="currentColor"
-        opacity="0.85"
-      />
-      <path
-        d="M11.6 20.3c.5-1.9.3-3.6-.8-5.3"
-        stroke="var(--background)"
-        strokeWidth="1"
-        strokeLinecap="round"
-        fill="none"
       />
     </svg>
   );

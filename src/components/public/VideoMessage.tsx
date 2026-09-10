@@ -28,7 +28,8 @@ export function VideoMessage() {
       >
         <source src="/video/nivaldo-mensagem.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-sidebar via-sidebar/50 to-sidebar/10" />
+      <div className="absolute inset-0 -z-10 bg-sidebar/45" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-sidebar via-sidebar/55 to-sidebar/25" />
 
       <Container className="flex flex-col items-center gap-4 py-14 text-center sm:py-20">
         <span className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-light">
