@@ -22,6 +22,7 @@ type FormState = {
   cotas: number;
   contributionDate: string;
   receipt: File | null;
+  hideFromRanking: boolean;
 };
 
 function todayISO() {
@@ -48,6 +49,7 @@ export function Wizard({
     cotas: 1,
     contributionDate: todayISO(),
     receipt: null,
+    hideFromRanking: false,
   });
 
   const amount = form.cotas * settings.cotaValue;
@@ -97,6 +99,7 @@ export function Wizard({
     data.set("cotas", String(form.cotas));
     data.set("amount", String(amount));
     data.set("contributionDate", form.contributionDate);
+    data.set("hideFromRanking", String(form.hideFromRanking));
     if (form.receipt) data.set("receipt", form.receipt);
 
     startTransition(async () => {
@@ -333,6 +336,18 @@ export function Wizard({
                 <dd className="text-accent-light">{formatCurrency(amount)}</dd>
               </div>
             </dl>
+
+            <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-background-elevated p-4 text-sm">
+              <input
+                type="checkbox"
+                checked={form.hideFromRanking}
+                onChange={(e) => update("hideFromRanking", e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-accent"
+              />
+              <span className="text-foreground-muted">
+                Prefiro não aparecer no ranking público
+              </span>
+            </label>
           </div>
         ) : null}
 

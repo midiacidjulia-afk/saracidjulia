@@ -18,6 +18,7 @@ create table if not exists participants (
   whatsapp text not null,
   city text not null,
   church_id uuid not null references churches (id) on delete restrict,
+  hide_from_ranking boolean not null default false,
   created_at timestamptz not null default now()
 );
 

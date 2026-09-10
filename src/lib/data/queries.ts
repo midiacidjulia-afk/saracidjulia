@@ -151,7 +151,7 @@ export async function getTopParticipants(): Promise<TopParticipant[]> {
   const supabase = await createClient();
   const { data } = await supabase
     .from("contributions")
-    .select("cotas, amount, participants(name), churches(name)")
+    .select("cotas, amount, participants(name, hide_from_ranking), churches(name)")
     .eq("status", "aprovado");
 
   if (!data) return [];
@@ -159,6 +159,7 @@ export async function getTopParticipants(): Promise<TopParticipant[]> {
   const byName = new Map<string, TopParticipant>();
   for (const row of data) {
     const participant = Array.isArray(row.participants) ? row.participants[0] : row.participants;
+    if (participant?.hide_from_ranking) continue;
     const church = Array.isArray(row.churches) ? row.churches[0] : row.churches;
     const name = participant?.name ?? "Participante";
     const existing = byName.get(name);
@@ -185,7 +186,7 @@ export async function getParticipants(): Promise<Participant[]> {
   const { data } = await supabase
     .from("participants")
     .select(
-      "id, name, whatsapp, city, created_at, church_id, churches(name), contributions(id, cotas, amount, contribution_date, status)",
+      "id, name, whatsapp, city, created_at, church_id, hide_from_ranking, churches(name), contributions(id, cotas, amount, contribution_date, status)",
     )
     .order("created_at", { ascending: false });
 
@@ -208,6 +209,7 @@ export async function getParticipants(): Promise<Participant[]> {
       date: contribution.contribution_date,
       status: contribution.status,
       createdAt: row.created_at,
+      hideFromRanking: row.hide_from_ranking,
     }));
   });
 }

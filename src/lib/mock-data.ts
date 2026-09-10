@@ -71,6 +71,7 @@ function buildParticipants(): Participant[] {
       date: new Date(now - daysAgo * 86_400_000).toISOString(),
       status: statuses[Math.floor(rand() * statuses.length)],
       createdAt: new Date(now - daysAgo * 86_400_000 - Math.floor(rand() * 3_600_000)).toISOString(),
+      hideFromRanking: rand() < 0.15,
     });
   }
 
@@ -111,7 +112,9 @@ export function computeCampaignStats(): CampaignStats {
 }
 
 export function computeTopParticipants(): TopParticipant[] {
-  const approved = mockParticipants.filter((p) => p.status === "aprovado");
+  const approved = mockParticipants.filter(
+    (p) => p.status === "aprovado" && !p.hideFromRanking,
+  );
   const byName = new Map<string, TopParticipant>();
 
   for (const p of approved) {
