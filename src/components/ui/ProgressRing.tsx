@@ -1,3 +1,7 @@
+"use client";
+
+import { CountUp } from "@/components/ui/CountUp";
+
 export function ProgressRing({
   percent,
   size = 128,
@@ -49,7 +53,9 @@ export function ProgressRing({
         </defs>
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-serif text-2xl text-foreground">{Math.round(clamped)}%</span>
+        <span className="font-serif text-2xl text-foreground">
+          <CountUp value={clamped} format={(n) => `${Math.round(n)}%`} />
+        </span>
         {label ? (
           <span className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted">
             {label}

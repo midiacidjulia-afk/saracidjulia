@@ -10,6 +10,7 @@ import { QrCode } from "@/components/public/QrCode";
 import { StatCard } from "@/components/ui/StatCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Container";
+import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 import { formatNumber } from "@/lib/utils";
 import {
@@ -78,21 +79,30 @@ export default async function DashboardPage() {
       </section>
 
       <section className="border-t border-border bg-radial-glow py-20 sm:py-24">
-        <Container className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16">
-          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
-            <h2 className="max-w-xl font-serif text-3xl text-foreground sm:text-4xl">
-              Faça parte dessa história
-            </h2>
-            <p className="max-w-lg text-foreground-muted">
-              Sua cota é mais do que uma contribuição — é um passo em direção a
-              um templo renovado e mais vidas alcançadas.
-            </p>
-            <LinkButton href="/contribuir" size="lg" className="mt-2">
-              Quero fazer parte →
-            </LinkButton>
-          </div>
+        <Container>
+          <Card className="overflow-hidden p-0 glow-accent">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr]">
+              <div className="flex flex-col items-center gap-4 p-8 text-center sm:p-12 lg:items-start lg:text-left">
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-dark">
+                  Faça parte dessa obra
+                </span>
+                <h2 className="max-w-xl font-serif text-3xl text-foreground sm:text-4xl">
+                  Sua cota é um passo em direção a um templo renovado
+                </h2>
+                <p className="max-w-lg text-foreground-muted">
+                  Mais do que uma contribuição, é um gesto de pertencimento a
+                  algo maior — mais vidas alcançadas e transformadas.
+                </p>
+                <LinkButton href="/contribuir" size="lg" className="mt-2">
+                  Quero fazer parte →
+                </LinkButton>
+              </div>
 
-          <QrCode />
+              <div className="flex items-center justify-center border-t border-border p-8 sm:p-12 lg:border-l lg:border-t-0">
+                <QrCode />
+              </div>
+            </div>
+          </Card>
         </Container>
       </section>
     </>

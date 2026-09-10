@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Marca em forma de chama/folha, evocando o símbolo da Sara Nossa Terra.
- * Não temos o arquivo vetorial real da marca — este é um desenho próprio,
- * aproximado a partir de referências visuais da identidade da igreja.
+ * Marca em forma de chama, aproximada a partir do logo real enviado pelo
+ * cliente (chama/folha branca sobre fundo escuro, ao lado do wordmark
+ * "Sara Nossa Terra — Cidade Júlia"). Como a imagem chegou colada no chat
+ * (sem arquivo anexado), este é um redesenho manual — não uma extração
+ * vetorial exata do arquivo original.
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
@@ -14,13 +16,18 @@ export function LogoMark({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <path
-        d="M13 1.3C9 4.3 6.1 8.6 6.1 12.9A5.95 5.95 0 0 0 12 18.9a5.95 5.95 0 0 0 5.9-5.9c0-2.2-1-4.2-2.5-5.6.4 1.5 0 2.8-.9 3.7-.5-4-1.4-6.9-1.5-9.8Z"
+        d="M12.4 1C9.6 3.6 7.6 6.6 7.6 9.6c0 1.6.6 2.9 1.6 3.8-.9-2.8-.4-5.4 1.4-7.7-.3 2.7.1 5.2 1.6 7.1 1.1 1.4 1.4 2.9 1 4.5C14 15.8 15.3 13.5 15.3 11c0-1.7-.8-3.2-2-4.4.8.3 1.5.8 2.1 1.5-.4-2.9-1.4-5.1-3-7.1Z"
         fill="currentColor"
       />
       <path
-        d="M12 18.9c-.3-2.2.1-4.3 1.3-6.1"
+        d="M9.4 12.6c.6 2.9 2 5 4.2 6.3-2.6.6-4.8-.1-6.2-2.1-1-1.5-1.2-3.2-.6-5"
+        fill="currentColor"
+        opacity="0.85"
+      />
+      <path
+        d="M11.6 20.3c.5-1.9.3-3.6-.8-5.3"
         stroke="var(--background)"
-        strokeWidth="1.1"
+        strokeWidth="1"
         strokeLinecap="round"
         fill="none"
       />

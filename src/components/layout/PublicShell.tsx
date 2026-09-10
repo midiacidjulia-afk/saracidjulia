@@ -42,7 +42,7 @@ export function PublicShell({ children }: { children: ReactNode }) {
           </button>
           <Link href="/" className="flex items-center gap-2">
             <LogoBadge className="h-7 w-7" />
-            <span className="font-serif text-sm text-sidebar-foreground">Sara Cidade Júlia</span>
+            <span className="font-serif text-sm text-sidebar-foreground">Sara Nossa Terra</span>
           </Link>
           <LinkButton href="/contribuir" size="md" className="h-9 px-4 text-xs">
             Contribuir

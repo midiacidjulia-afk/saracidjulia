@@ -1,6 +1,9 @@
+"use client";
+
 import { formatCurrency, formatNumber } from "@/lib/utils";
 import { Card } from "@/components/ui/Card";
 import { ProgressRing } from "@/components/ui/ProgressRing";
+import { CountUp } from "@/components/ui/CountUp";
 
 export function GoalCard({
   totalRaised,
@@ -27,7 +30,7 @@ export function GoalCard({
           <div>
             <p className="text-sm text-foreground-muted">Já arrecadamos</p>
             <p className="font-serif text-4xl text-gold-gradient sm:text-5xl">
-              {formatCurrency(totalRaised)}
+              <CountUp value={totalRaised} format={formatCurrency} />
             </p>
           </div>
 
@@ -66,7 +69,7 @@ export function GoalCard({
       <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6 sm:grid-cols-3">
         <div>
           <p className="text-lg font-semibold text-foreground">
-            {formatNumber(cotasFilled)}
+            <CountUp value={cotasFilled} format={(n) => formatNumber(Math.round(n))} />
             <span className="text-foreground-muted">/{formatNumber(totalCotas)}</span>
           </p>
           <p className="text-xs text-foreground-muted">cotas preenchidas</p>

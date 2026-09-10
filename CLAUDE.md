@@ -36,8 +36,8 @@ Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), c
 - Espaço negativo generoso: ritmo vertical padronizado entre seções (`py-20 sm:py-28`) em todas as páginas públicas
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
 - Vídeo de mensagem (Nivaldo) como banner no topo da home, antes do hero — não mais como plano de fundo full-bleed
-- Marca (`Logo.tsx`) é um desenho próprio em forma de folha/chama que evoca o símbolo da Sara Nossa Terra; não há arquivo vetorial real da marca da igreja disponível no projeto — o cliente enviou uma referência de logo de uma unidade parceira (Sara Saúde) com o mesmo ícone de chama em branco sobre fundo escuro, usada para calibrar o desenho e o layout do wordmark (`LogoBadge` + nome em duas linhas: nome principal + linha menor em caixa alta)
-- Wordmark do cabeçalho público (`PublicSidebar.tsx`): "Sara" / "Cidade Júlia" — nome de exibição da marca, distinto do nome institucional completo ("Sara Nossa Terra — Júlia-SP") usado no rodapé e nos textos institucionais
+- Marca (`Logo.tsx`) é um desenho próprio em forma de chama de duas pétalas, redesenhado a partir do logo real da igreja (chama branca + wordmark "Sara Nossa Terra — Cidade Júlia") que o cliente enviou colado no chat; como a imagem não chegou como arquivo anexado, não há extração vetorial exata — é uma aproximação manual, revisada visualmente via screenshot até ficar fiel à referência
+- Wordmark do cabeçalho público (`PublicSidebar.tsx`/`PublicShell.tsx`): "Sara Nossa Terra" / "Cidade Júlia", espelhando a hierarquia do logo real
 - Visualização de cotas (`CotasCross.tsx`) desenha uma cruz latina com estrelas douradas em vez de pirâmide, proporcional ao preenchimento (`filled`/`total`)
 - Cotas de admin (gráficos do Recharts em `Charts.tsx`) usam constantes de cor hex sincronizadas manualmente com os tokens de `globals.css` — não são geradas automaticamente, então qualquer nova mudança de paleta precisa atualizar os dois lugares
 

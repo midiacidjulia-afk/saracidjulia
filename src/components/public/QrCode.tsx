@@ -1,13 +1,15 @@
 import QRCode from "qrcode";
-import { Card } from "@/components/ui/Card";
+import { cn } from "@/lib/utils";
 import { getSiteUrl } from "@/lib/site-url";
 
 export async function QrCode({
   path = "/contribuir",
-  label = "Aponte a câmera para contribuir",
+  label = "Escaneie para contribuir",
+  className,
 }: {
   path?: string;
   label?: string;
+  className?: string;
 }) {
   const siteUrl = await getSiteUrl();
   const dataUrl = await QRCode.toDataURL(`${siteUrl}${path}`, {
@@ -20,14 +22,14 @@ export async function QrCode({
   });
 
   return (
-    <Card className="flex flex-col items-center gap-4 text-center">
+    <div className={cn("flex flex-col items-center gap-4 text-center", className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={dataUrl}
         alt="QR code para acessar a página de contribuição"
         width={160}
         height={160}
-        className="rounded-lg border border-border"
+        className="rounded-xl border border-border bg-white p-2"
       />
       <div>
         <p className="text-sm font-medium text-foreground">{label}</p>
@@ -35,6 +37,6 @@ export async function QrCode({
           Ideal para telão, cartazes e convites impressos
         </p>
       </div>
-    </Card>
+    </div>
   );
 }

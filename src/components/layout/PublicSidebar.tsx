@@ -23,7 +23,7 @@ export function PublicSidebar() {
       <Link href="/" className="flex items-center gap-2.5 px-2">
         <LogoBadge />
         <div className="flex flex-col leading-tight">
-          <span className="font-serif text-base text-sidebar-foreground">Sara</span>
+          <span className="font-serif text-sm text-sidebar-foreground">Sara Nossa Terra</span>
           <span className="text-[10px] uppercase tracking-[0.18em] text-sidebar-foreground-muted">
             Cidade Júlia
           </span>
