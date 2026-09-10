@@ -4,7 +4,7 @@ import { LogoBadge } from "@/components/ui/Logo";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-sidebar-border bg-sidebar pb-24 pt-12 text-sidebar-foreground lg:pb-12">
+    <footer className="mt-28 border-t border-sidebar-border bg-sidebar pb-28 pt-16 text-sidebar-foreground lg:pb-14">
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-2.5">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className="mt-10 flex flex-col gap-3 border-t border-sidebar-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="mt-12 flex flex-col gap-3 border-t border-sidebar-border pt-7 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-serif text-sm italic text-gold-light">Juntos, vamos mais longe!</p>
         <p className="text-[11px] uppercase tracking-[0.16em] text-sidebar-foreground-muted">
           Um templo renovado <span className="mx-2 text-accent-light">·</span> Mais vidas alcançadas
