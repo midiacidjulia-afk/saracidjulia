@@ -16,19 +16,19 @@ import {
 } from "recharts";
 import { Card } from "@/components/ui/Card";
 
-const ACCENT = "#c9a24a";
-const ACCENT_LIGHT = "#e4c579";
+const ACCENT = "#d4af6a";
+const ACCENT_LIGHT = "#e8c98c";
 const SUCCESS = "#34d399";
 const WARNING = "#fbbf24";
 const DANGER = "#f87171";
-const GRID = "#332f37";
-const TICK = "#9c9690";
+const GRID = "#263349";
+const TICK = "#93a1b6";
 
 const tooltipStyle = {
-  background: "#28242b",
-  border: "1px solid #332f37",
+  background: "#1a2739",
+  border: "1px solid #263349",
   borderRadius: 12,
-  color: "#f6f2ea",
+  color: "#f2efe6",
   fontSize: 12,
 };
 
@@ -41,7 +41,7 @@ export function ChurchCotasChart({ data }: { data: { name: string; cotas: number
           <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
           <XAxis dataKey="name" tick={{ fill: TICK, fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={60} />
           <YAxis tick={{ fill: TICK, fontSize: 11 }} />
-          <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "rgba(201,162,74,0.1)" }} />
+          <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "rgba(212,175,106,0.1)" }} />
           <Bar dataKey="cotas" fill={ACCENT} radius={[6, 6, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>

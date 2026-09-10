@@ -24,11 +24,10 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Identidade visual
 
-Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **branco pérola** para marca/ação e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
+Tema escuro azul-marinho unificado em toda a aplicação, com o **dourado como destaque único** (marca, ação, valor e celebração convergem na mesma família de cor — `accent` e `gold` são o mesmo tom) — visual "clássico/tradicional premium" escolhido pelo cliente entre 4 direções de paleta comparadas lado a lado.
 
-- Fundo: cinza grafite quente unificado em toda a aplicação — `background` (#17151a, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar` (#111014) mais escura que o conteúdo, para o menu/rodapé se destacarem como um painel
-- Destaque de marca/ação: branco pérola/champagne (`accent`/`accent-light`/`accent-dark`, #e7e0cf) — badge da marca, botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
-- Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — cruz de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º com gradiente metálico), citações em itálico — usado com moderação, nunca em UI estrutural
+- Fundo: azul-marinho profundo unificado em toda a aplicação — `background` (#0d1420, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar` (#070c15) mais escura que o conteúdo, para o menu/rodapé se destacarem como um painel
+- Destaque único de marca/ação/valor: dourado (`accent`/`gold` e suas variantes `-light`/`-dark`, #d4af6a) — badge da marca, botões, links, navegação, cruz de cotas, valores arrecadados, medalhas do ranking, citações em itálico; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
 - Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
 - Texto: off-white quente (`foreground`) sobre o grafite
 - Tipografia elegante, institucional (Playfair Display só em títulos de seção, Inter no corpo e em UI)
@@ -41,7 +40,7 @@ Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), c
 - Visualização de cotas (`CotasCross.tsx`) desenha uma cruz latina com estrelas douradas em vez de pirâmide, proporcional ao preenchimento (`filled`/`total`)
 - Cotas de admin (gráficos do Recharts em `Charts.tsx`) usam constantes de cor hex sincronizadas manualmente com os tokens de `globals.css` — não são geradas automaticamente, então qualquer nova mudança de paleta precisa atualizar os dois lugares
 
-Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → v6 cinza mais claro, pérola mais intenso, wordmark "Sara / Cidade Júlia" → **v7 (atual)**: redesign visual completo ("dark premium") sobre a mesma base de tokens — grafite mais quente e profundo, pérola recalibrado para champagne, sombras/glows mais discretos, cruz de cotas com estrelas em vez de pirâmide, medalhas de ranking com gradiente metálico, ritmo vertical padronizado, admin realinhado à mesma paleta. Zero mudança de dado, rota ou regra de negócio nessa rodada.
+Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → v6 cinza mais claro, pérola mais intenso, wordmark "Sara / Cidade Júlia" → v7 redesign visual completo ("dark premium") sobre a mesma base de tokens, grafite + pérola + dourado moderado → **v8 (atual)**: troca de paleta — grafite substituído por azul-marinho profundo, pérola removido e dourado promovido a cor única de destaque (marca + ação + valor), escolhida pelo cliente entre 4 direções renderizadas lado a lado (grafite/pérola atual, híbrido claro, azul-marinho/dourado, grafite/cobre). Zero mudança de dado, rota ou regra de negócio nessa rodada.
 
 ## Tom de voz (regra importante)
 

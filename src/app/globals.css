@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #17151a;
-  --background-elevated: #1f1c22;
-  --background-card: #28242b;
-  --foreground: #f6f2ea;
-  --foreground-muted: #9c9690;
-  --border: #332f37;
-  --accent: #e7e0cf;
-  --accent-light: #f7f3e8;
-  --accent-dark: #c7bc9f;
-  --gold: #c9a24a;
-  --gold-light: #e4c579;
-  --gold-dark: #8f6f2d;
-  --sidebar: #111014;
-  --sidebar-elevated: #19171c;
-  --sidebar-border: #2a262d;
-  --sidebar-foreground: #f6f2ea;
-  --sidebar-foreground-muted: #96908b;
+  --background: #0d1420;
+  --background-elevated: #141e2f;
+  --background-card: #1a2739;
+  --foreground: #f2efe6;
+  --foreground-muted: #93a1b6;
+  --border: #263349;
+  --accent: #d4af6a;
+  --accent-light: #e8c98c;
+  --accent-dark: #a9803a;
+  --gold: #d4af6a;
+  --gold-light: #e8c98c;
+  --gold-dark: #a9803a;
+  --sidebar: #070c15;
+  --sidebar-elevated: #0f1723;
+  --sidebar-border: #1c2839;
+  --sidebar-foreground: #f2efe6;
+  --sidebar-foreground-muted: #8393aa;
   --success: #34d399;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -69,26 +69,26 @@ body {
 
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(231, 224, 207, 0.1),
-    0 24px 48px -28px rgba(231, 224, 207, 0.22);
+    0 0 0 1px rgba(212, 175, 106,0.1),
+    0 24px 48px -28px rgba(212, 175, 106,0.22);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 10px 24px -12px rgba(231, 224, 207, 0.2);
+  box-shadow: 0 10px 24px -12px rgba(212, 175, 106,0.2);
 }
 
 .glow-gold {
   box-shadow:
-    0 0 0 1px rgba(201, 162, 74, 0.14),
-    0 24px 48px -28px rgba(201, 162, 74, 0.3);
+    0 0 0 1px rgba(212, 175, 106,0.14),
+    0 24px 48px -28px rgba(212, 175, 106,0.3);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 10px 24px -12px rgba(201, 162, 74, 0.28);
+  box-shadow: 0 10px 24px -12px rgba(212, 175, 106,0.28);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(231, 224, 207, 0.1), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 106,0.1), transparent 60%);
 }
 
 .card-surface {
@@ -139,6 +139,6 @@ body {
 }
 
 ::selection {
-  background: rgba(231, 224, 207, 0.32);
+  background: rgba(212, 175, 106,0.32);
   color: var(--background);
 }
