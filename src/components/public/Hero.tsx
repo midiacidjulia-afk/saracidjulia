@@ -12,7 +12,7 @@ const pillars = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border bg-radial-glow">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(237,233,221,0.16),transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(231,224,207,0.14),transparent_45%)]" />
       <Container className="relative py-20 sm:py-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center animate-fade-up">
           <div className="flex flex-wrap items-center justify-center gap-4">

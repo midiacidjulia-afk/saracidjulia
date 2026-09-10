@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #2d2d33;
-  --background-elevated: #35353c;
-  --background-card: #3f3f46;
-  --foreground: #f5f3ee;
-  --foreground-muted: #adacb4;
-  --border: #4a4a52;
-  --accent: #ede9dd;
-  --accent-light: #fbf9f3;
-  --accent-dark: #cfc8b3;
+  --background: #17151a;
+  --background-elevated: #1f1c22;
+  --background-card: #28242b;
+  --foreground: #f6f2ea;
+  --foreground-muted: #9c9690;
+  --border: #332f37;
+  --accent: #e7e0cf;
+  --accent-light: #f7f3e8;
+  --accent-dark: #c7bc9f;
   --gold: #c9a24a;
   --gold-light: #e4c579;
   --gold-dark: #8f6f2d;
-  --sidebar: #232328;
-  --sidebar-elevated: #2c2c32;
-  --sidebar-border: #38383f;
-  --sidebar-foreground: #f5f3ee;
-  --sidebar-foreground-muted: #aeadb5;
+  --sidebar: #111014;
+  --sidebar-elevated: #19171c;
+  --sidebar-border: #2a262d;
+  --sidebar-foreground: #f6f2ea;
+  --sidebar-foreground-muted: #96908b;
   --success: #34d399;
   --warning: #fbbf24;
   --danger: #f87171;
@@ -69,31 +69,34 @@ body {
 
 .glow-accent {
   box-shadow:
-    0 0 0 1px rgba(237, 233, 221, 0.18),
-    0 24px 50px -20px rgba(237, 233, 221, 0.3);
+    0 0 0 1px rgba(231, 224, 207, 0.1),
+    0 24px 48px -28px rgba(231, 224, 207, 0.22);
 }
 
 .glow-accent-sm {
-  box-shadow: 0 8px 24px -6px rgba(237, 233, 221, 0.3);
+  box-shadow: 0 10px 24px -12px rgba(231, 224, 207, 0.2);
 }
 
 .glow-gold {
   box-shadow:
-    0 0 0 1px rgba(201, 162, 74, 0.2),
-    0 24px 50px -20px rgba(201, 162, 74, 0.4);
+    0 0 0 1px rgba(201, 162, 74, 0.14),
+    0 24px 48px -28px rgba(201, 162, 74, 0.3);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 8px 24px -6px rgba(201, 162, 74, 0.4);
+  box-shadow: 0 10px 24px -12px rgba(201, 162, 74, 0.28);
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(237, 233, 221, 0.18), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(231, 224, 207, 0.1), transparent 60%);
 }
 
 .card-surface {
   background: linear-gradient(180deg, var(--background-card), var(--background-elevated));
   border: 1px solid var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 16px 40px -32px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes fade-up {
@@ -112,11 +115,11 @@ body {
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
+  from {
+    background-position: -150% 0;
   }
-  100% {
-    background-position: 200% 0;
+  to {
+    background-position: 250% 0;
   }
 }
 
@@ -124,11 +127,11 @@ body {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.16),
     transparent
   );
   background-size: 200% 100%;
-  animation: shimmer 2.5s ease-in-out infinite;
+  animation: shimmer 1.6s ease-out 0.3s 1 both;
 }
 
 * {
@@ -136,6 +139,6 @@ body {
 }
 
 ::selection {
-  background: rgba(237, 233, 221, 0.35);
+  background: rgba(231, 224, 207, 0.32);
   color: var(--background);
 }
