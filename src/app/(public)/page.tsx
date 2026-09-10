@@ -60,7 +60,7 @@ export default async function DashboardPage() {
             <SectionHeading
               eyebrow="Nossas cotas"
               title="Cada cota preenchida acende um novo passo"
-              description={`1.000 cotas de R$ ${settings.cotaValue.toFixed(0)} compõem a meta de R$ ${settings.goalAmount.toLocaleString("pt-BR")}. Veja o quanto já caminhamos juntos.`}
+              description={`${settings.totalCotas.toLocaleString("pt-BR")} cotas de R$ ${settings.cotaValue.toFixed(0)} compõem a meta de R$ ${settings.goalAmount.toLocaleString("pt-BR")}. Veja o quanto já caminhamos juntos.`}
             />
             <LinkButton href="/cotas" variant="secondary">
               Ver todas as cotas

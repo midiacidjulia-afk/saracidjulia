@@ -44,9 +44,9 @@ create table if not exists receipts (
 
 create table if not exists settings (
   id smallint primary key default 1 check (id = 1),
-  goal_amount numeric(12, 2) not null default 100000,
+  goal_amount numeric(12, 2) not null default 20000,
   cota_value numeric(12, 2) not null default 100,
-  total_cotas integer not null default 1000,
+  total_cotas integer not null default 200,
   whatsapp_number text not null default '',
   whatsapp_contact_name text not null default 'Nivaldo',
   updated_at timestamptz not null default now()

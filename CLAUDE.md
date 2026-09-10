@@ -6,8 +6,9 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Sobre o projeto
 
-**Juntos pela Obra** — plataforma de arrecadação da igreja **Sara Nossa Terra (Júlia-SP)**, com meta de **R$ 100.000,00** para reforma do templo, dividida em **1.000 cotas de R$ 100,00**.
+**Juntos pela Obra** — plataforma de arrecadação da igreja **Sara Nossa Terra (Júlia-SP)**, para reformar o salão e transformar um espaço que era um bar em uma igreja estruturada.
 
+- Orçamento total da obra: **R$ 28.000,00**; já arrecadados **R$ 8.000,00** com ofertas especiais; meta desta campanha: **R$ 20.000,00**, dividida em **200 cotas de R$ 100,00**
 - Slogan: "Um templo renovado. Mais vidas alcançadas."
 - Contato responsável pela obra: **Nivaldo** (recebe comprovantes via WhatsApp)
 - Referência: Lucas 6:38, citada no hero da página inicial

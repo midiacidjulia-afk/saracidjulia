@@ -34,14 +34,14 @@ export function Hero({ impact }: { impact: ImpactStats }) {
           </div>
 
           <h1 className="max-w-3xl font-serif text-4xl leading-[1.15] text-foreground sm:text-5xl lg:text-6xl">
-            Juntos por um templo{" "}
-            <span className="text-accent-gradient">mais forte</span> e por mais
-            vidas!
+            Juntos por uma Obra que fará a diferença em{" "}
+            <span className="text-accent-gradient">muitas vidas</span>, inclusive
+            na sua
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-foreground-muted">
-            Nosso objetivo é arrecadar <strong className="text-foreground">R$ 100.000</strong>{" "}
-            para reformar o templo e preparar um espaço ainda melhor para
+            Nosso objetivo é arrecadar <strong className="text-foreground">R$ 20.000</strong>{" "}
+            para reformar o salão e preparar um espaço estruturado para
             acolher, cuidar e transformar vidas.
           </p>
 

@@ -55,8 +55,16 @@ export default function SobrePage() {
               um passo de fé para tudo o que ainda está por vir.
             </p>
             <p>
-              A meta é arrecadar <strong className="text-foreground">R$ 100.000,00</strong>,
-              divididos em <strong className="text-foreground">1.000 cotas de R$ 100,00</strong>.
+              A obra completa está orçada em{" "}
+              <strong className="text-foreground">R$ 28.000,00</strong>, para
+              reformar o salão e transformar um espaço que já foi um bar em
+              uma igreja estruturada, pronta para receber famílias que
+              querem cultuar ao Senhor. Já arrecadamos{" "}
+              <strong className="text-foreground">R$ 8.000,00</strong> com
+              algumas ofertas especiais — e agora, iniciando esta campanha,
+              precisamos arrecadar mais{" "}
+              <strong className="text-foreground">R$ 20.000,00</strong>,
+              divididos em <strong className="text-foreground">200 cotas de R$ 100,00</strong>.
               Cada cota é um convite à participação coletiva — não uma doação
               distante, mas um gesto de pertencimento a algo maior que estamos
               construindo juntos.

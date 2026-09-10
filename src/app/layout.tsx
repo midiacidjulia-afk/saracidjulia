@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Juntos pela Obra | Sara Nossa Terra Júlia-SP",
   description:
-    "Um templo renovado. Mais vidas alcançadas. Faça parte da reforma do templo Sara Nossa Terra Júlia-SP — meta de R$ 100.000 em 1.000 cotas.",
+    "Um templo renovado. Mais vidas alcançadas. Faça parte da reforma do templo Sara Nossa Terra Júlia-SP — meta de R$ 20.000 em 200 cotas.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
