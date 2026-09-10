@@ -26,23 +26,22 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 Tema escuro unificado (cinza grafite em toda a aplicação, não só no menu), com dois destaques que dividem função: **branco pérola** para marca/ação e **dourado** para valor/celebração (cotas, ranking, dinheiro) — combinação lida como "premium" pedida explicitamente pelo cliente.
 
-- Fundo: cinza grafite unificado em toda a aplicação — `background` (#232327, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar`/`sidebar-elevated`/`sidebar-border` levemente mais escuros que o conteúdo, para o menu/rodapé se destacarem como um painel; tom mais claro que as versões anteriores, a pedido do cliente ("cinza um pouco mais claro")
-- Destaque de marca/ação: branco pérola (`accent`/`accent-light`/`accent-dark`) — badge da marca, botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
-- Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — pirâmide de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º), citações em itálico
+- Fundo: cinza grafite quente unificado em toda a aplicação — `background` (#17151a, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar` (#111014) mais escura que o conteúdo, para o menu/rodapé se destacarem como um painel
+- Destaque de marca/ação: branco pérola/champagne (`accent`/`accent-light`/`accent-dark`, #e7e0cf) — badge da marca, botões, links, navegação, elementos interativos; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
+- Destaque de valor/celebração: dourado (`gold`/`gold-light`/`gold-dark`) — cruz de cotas, valores arrecadados, medalhas do ranking (1º/2º/3º com gradiente metálico), citações em itálico — usado com moderação, nunca em UI estrutural
 - Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
 - Texto: off-white quente (`foreground`) sobre o grafite
-- Tipografia elegante, institucional (Playfair Display nos títulos, Inter no corpo)
-- Glow/luz sutil (`glow-accent`, `glow-gold`), animações discretas — nunca "gamificado" ou infantilizado
+- Tipografia elegante, institucional (Playfair Display só em títulos de seção, Inter no corpo e em UI)
+- Craft "premium discreto": sombras suaves e bordas quase invisíveis (`card-surface`), glows sutis (`glow-accent`, `glow-gold`) em vez de neon, `.animate-shimmer` roda uma vez só no carregamento (não em loop), microinterações discretas (`active:scale-95`, anéis de foco) em botões e steppers
+- Espaço negativo generoso: ritmo vertical padronizado entre seções (`py-20 sm:py-28`) em todas as páginas públicas
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
 - Vídeo de mensagem (Nivaldo) como banner no topo da home, antes do hero — não mais como plano de fundo full-bleed
 - Marca (`Logo.tsx`) é um desenho próprio em forma de folha/chama que evoca o símbolo da Sara Nossa Terra; não há arquivo vetorial real da marca da igreja disponível no projeto — o cliente enviou uma referência de logo de uma unidade parceira (Sara Saúde) com o mesmo ícone de chama em branco sobre fundo escuro, usada para calibrar o desenho e o layout do wordmark (`LogoBadge` + nome em duas linhas: nome principal + linha menor em caixa alta)
 - Wordmark do cabeçalho público (`PublicSidebar.tsx`): "Sara" / "Cidade Júlia" — nome de exibição da marca, distinto do nome institucional completo ("Sara Nossa Terra — Júlia-SP") usado no rodapé e nos textos institucionais
+- Visualização de cotas (`CotasCross.tsx`) desenha uma cruz latina com estrelas douradas em vez de pirâmide, proporcional ao preenchimento (`filled`/`total`)
+- Cotas de admin (gráficos do Recharts em `Charts.tsx`) usam constantes de cor hex sincronizadas manualmente com os tokens de `globals.css` — não são geradas automaticamente, então qualquer nova mudança de paleta precisa atualizar os dois lugares
 
-Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → **v6 (atual)**: cinza de fundo mais claro, branco pérola mais intenso, badge da marca com tinta pérola (em vez de dourado) e wordmark do cabeçalho ajustado para "Sara / Cidade Júlia" a partir de referência visual enviada pelo cliente.
-
-Histórico: a primeira versão era preto/dourado; depois foi para um tema claro/creme a pedido do cliente ("mais leve, mais claro"); depois ganhou o azul da identidade oficial da SNT num modelo híbrido (menu escuro + conteúdo claro); a versão atual voltou a ser inteiramente escura ("cinza escuro, cores mais premium"), reaproveitando o dourado como segundo destaque em vez de descartá-lo.
-
-Não existe arquivo de logo real da igreja — `src/components/ui/Logo.tsx` usa uma marca própria em forma de folha/chama que evoca o símbolo da Sara Nossa Terra.
+Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → v6 cinza mais claro, pérola mais intenso, wordmark "Sara / Cidade Júlia" → **v7 (atual)**: redesign visual completo ("dark premium") sobre a mesma base de tokens — grafite mais quente e profundo, pérola recalibrado para champagne, sombras/glows mais discretos, cruz de cotas com estrelas em vez de pirâmide, medalhas de ranking com gradiente metálico, ritmo vertical padronizado, admin realinhado à mesma paleta. Zero mudança de dado, rota ou regra de negócio nessa rodada.
 
 ## Tom de voz (regra importante)
 
