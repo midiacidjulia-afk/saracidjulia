@@ -21,17 +21,17 @@ export function ParticipantRankingList({
               className={cn(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif text-sm",
                 index === 0
-                  ? "bg-gold text-background"
+                  ? "bg-gradient-to-br from-gold-light to-gold-dark text-background glow-gold-sm"
                   : index === 1
-                    ? "bg-foreground-muted/60 text-background"
+                    ? "bg-gradient-to-br from-[#EDEAE2] to-[#A7A29A] text-background"
                     : index === 2
-                      ? "bg-gold-dark/50 text-gold-light"
+                      ? "bg-gradient-to-br from-gold-dark to-[#5c4820] text-gold-light"
                       : "bg-background-elevated text-foreground-muted",
               )}
             >
               {index + 1}
             </span>
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 font-serif text-sm text-accent-light">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/20 bg-accent/[0.06] font-serif text-sm text-accent-light">
               {initials(p.name)}
             </span>
             <div className="min-w-0 flex-1">

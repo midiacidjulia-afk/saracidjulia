@@ -22,7 +22,7 @@ export default async function ImpactoPage() {
 
   return (
     <>
-      <section className="border-b border-border bg-radial-glow py-16 sm:py-24">
+      <section className="border-b border-border bg-radial-glow py-20 sm:py-28">
         <Container>
           <SectionHeading
             align="center"
@@ -33,14 +33,14 @@ export default async function ImpactoPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-20 sm:py-28">
         <Container>
           <Card className="mx-auto max-w-xl">
             <div className="flex flex-col divide-y divide-border">
               {items.map((item) => (
                 <div key={item.label} className="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
-                    <item.icon size={20} strokeWidth={1.75} />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/20 bg-accent/[0.06] text-accent-light">
+                    <item.icon size={20} strokeWidth={1.6} />
                   </span>
                   <div>
                     <p className="font-serif text-2xl leading-tight text-foreground">

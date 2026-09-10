@@ -11,7 +11,7 @@ export const metadata = {
 export default function SobrePage() {
   return (
     <>
-      <section className="border-b border-border bg-radial-glow py-16 sm:py-24">
+      <section className="border-b border-border bg-radial-glow py-20 sm:py-28">
         <Container>
           <SectionHeading
             align="center"
@@ -23,7 +23,7 @@ export default function SobrePage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-20 sm:py-28">
         <Container className="flex flex-col gap-10">
           <PhotoGallery />
 
@@ -38,7 +38,7 @@ export default function SobrePage() {
         </Container>
       </section>
 
-      <section className="border-t border-border py-16 sm:py-24">
+      <section className="border-t border-border py-20 sm:py-28">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div className="flex flex-col gap-6 text-foreground-muted leading-relaxed">
             <h2 className="font-serif text-2xl text-foreground">Um templo renovado, mais vidas alcançadas</h2>
@@ -78,7 +78,7 @@ export default function SobrePage() {
           </div>
 
           <Card className="h-fit">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-dark">
               Fale com a coordenação da obra
             </p>
             <p className="mt-3 text-sm text-foreground-muted leading-relaxed">

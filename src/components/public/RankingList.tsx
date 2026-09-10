@@ -16,11 +16,11 @@ export function RankingList({ churches, limit }: { churches: Church[]; limit?: n
               className={cn(
                 "flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-serif text-sm",
                 index === 0
-                  ? "bg-gold text-background"
+                  ? "bg-gradient-to-br from-gold-light to-gold-dark text-background glow-gold-sm"
                   : index === 1
-                    ? "bg-foreground-muted/60 text-background"
+                    ? "bg-gradient-to-br from-[#EDEAE2] to-[#A7A29A] text-background"
                     : index === 2
-                      ? "bg-gold-dark/50 text-gold-light"
+                      ? "bg-gradient-to-br from-gold-dark to-[#5c4820] text-gold-light"
                       : "bg-background-elevated text-foreground-muted",
               )}
             >
@@ -32,7 +32,7 @@ export function RankingList({ churches, limit }: { churches: Church[]; limit?: n
               <p className="text-xs text-foreground-muted">
                 {church.city} · {formatNumber(church.participants)} participantes
               </p>
-              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-background-elevated">
+              <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-background-elevated">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-gold-dark to-gold-light"
                   style={{ width: `${Math.max(4, (church.cotas / max) * 100)}%` }}

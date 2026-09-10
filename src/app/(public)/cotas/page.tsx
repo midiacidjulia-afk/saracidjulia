@@ -19,7 +19,7 @@ export default async function CotasPage() {
 
   return (
     <>
-      <section className="border-b border-border bg-radial-glow py-16 sm:py-24">
+      <section className="border-b border-border bg-radial-glow py-20 sm:py-28">
         <Container>
           <SectionHeading
             align="center"
@@ -31,9 +31,9 @@ export default async function CotasPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-20 sm:py-28">
         <Container>
-          <Card className="relative flex flex-col items-center gap-8 p-6 sm:p-10">
+          <Card className="relative flex flex-col items-center gap-8 p-7 sm:p-12">
             <Badge className="absolute right-6 top-6 sm:right-8 sm:top-8">
               {percent.toLocaleString("pt-BR", { maximumFractionDigits: 1 })}%
             </Badge>
