@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { CalendarDays, Loader2, Upload, X } from "lucide-react";
+import { CalendarDays, Check, Copy, Loader2, Upload, X } from "lucide-react";
 import { Stepper } from "./Stepper";
 import { ThankYou } from "./ThankYou";
 import { Field, inputClass } from "@/components/ui/Field";
@@ -12,6 +12,7 @@ import { submitContribution } from "@/app/(public)/contribuir/actions";
 import type { Church, Settings } from "@/lib/types";
 
 const cotaPresets = [1, 5, 10, 20, 50];
+const pixKey = "cidadejuliaev@cesnt.com.br";
 
 type FormState = {
   name: string;
@@ -38,6 +39,7 @@ export function Wizard({
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const [pixCopied, setPixCopied] = useState(false);
   const [form, setForm] = useState<FormState>({
     name: "",
     whatsapp: "",
@@ -73,6 +75,16 @@ export function Wizard({
   function back() {
     setError(null);
     setStep((s) => Math.max(1, s - 1));
+  }
+
+  async function copyPixKey() {
+    try {
+      await navigator.clipboard.writeText(pixKey);
+      setPixCopied(true);
+      setTimeout(() => setPixCopied(false), 2000);
+    } catch {
+      // clipboard indisponível — a chave já está visível para copiar manualmente
+    }
   }
 
   function handleSubmit() {
@@ -232,10 +244,28 @@ export function Wizard({
         ) : null}
 
         {step === 4 ? (
-          <Field
-            label="Comprovante (opcional)"
-            hint="Imagem ou PDF, até 10MB. Você também poderá enviar pelo WhatsApp na próxima tela."
-          >
+          <>
+            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-gold-light">
+                Faça sua oferta via Pix
+              </p>
+              <div className="mt-2 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <span className="break-all font-mono text-sm text-foreground">{pixKey}</span>
+                <button
+                  type="button"
+                  onClick={copyPixKey}
+                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/40 px-3 py-1.5 text-xs text-gold-light transition-colors hover:bg-gold/10"
+                >
+                  {pixCopied ? <Check size={14} /> : <Copy size={14} />}
+                  {pixCopied ? "Copiado!" : "Copiar chave"}
+                </button>
+              </div>
+            </div>
+
+            <Field
+              label="Comprovante (opcional)"
+              hint="Imagem ou PDF, até 10MB. Você também poderá enviar pelo WhatsApp na próxima tela."
+            >
             {form.receipt ? (
               <div className="flex items-center justify-between rounded-lg border border-border bg-background-elevated px-4 py-3">
                 <span className="truncate text-sm text-foreground">{form.receipt.name}</span>
@@ -268,7 +298,8 @@ export function Wizard({
                 />
               </label>
             )}
-          </Field>
+            </Field>
+          </>
         ) : null}
 
         {step === 5 ? (
@@ -319,7 +350,7 @@ export function Wizard({
 
           {step < 5 ? (
             <Button type="button" onClick={next}>
-              Próximo passo →
+              {step === 4 && !form.receipt ? "Enviar comprovante depois →" : "Próximo passo →"}
             </Button>
           ) : (
             <Button type="button" onClick={handleSubmit} disabled={isPending}>
