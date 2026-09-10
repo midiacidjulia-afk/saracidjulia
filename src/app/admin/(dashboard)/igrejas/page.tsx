@@ -35,7 +35,10 @@ export default async function IgrejasPage() {
             </thead>
             <tbody>
               {churches.map((c) => (
-                <tr key={c.id} className="border-b border-border last:border-0">
+                <tr
+                  key={c.id}
+                  className="border-b border-border transition-colors last:border-0 hover:bg-background-elevated/50"
+                >
                   <td className="px-5 py-3 text-foreground">{c.name}</td>
                   <td className="px-5 py-3 text-foreground-muted">{c.city}</td>
                   <td className="px-5 py-3 text-foreground-muted">{formatNumber(c.participants)}</td>

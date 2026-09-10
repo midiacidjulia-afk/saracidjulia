@@ -21,13 +21,14 @@ const ACCENT_LIGHT = "#e4c579";
 const SUCCESS = "#34d399";
 const WARNING = "#fbbf24";
 const DANGER = "#f87171";
-const GRID = "#38383e";
+const GRID = "#332f37";
+const TICK = "#9c9690";
 
 const tooltipStyle = {
-  background: "#2c2c31",
-  border: "1px solid #38383e",
-  borderRadius: 8,
-  color: "#f3f1ec",
+  background: "#28242b",
+  border: "1px solid #332f37",
+  borderRadius: 12,
+  color: "#f6f2ea",
   fontSize: 12,
 };
 
@@ -38,8 +39,8 @@ export function ChurchCotasChart({ data }: { data: { name: string; cotas: number
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={data} margin={{ left: -20 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
-          <XAxis dataKey="name" tick={{ fill: "#98979e", fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={60} />
-          <YAxis tick={{ fill: "#98979e", fontSize: 11 }} />
+          <XAxis dataKey="name" tick={{ fill: TICK, fontSize: 11 }} interval={0} angle={-20} textAnchor="end" height={60} />
+          <YAxis tick={{ fill: TICK, fontSize: 11 }} />
           <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "rgba(201,162,74,0.1)" }} />
           <Bar dataKey="cotas" fill={ACCENT} radius={[6, 6, 0, 0]} />
         </BarChart>
@@ -55,8 +56,8 @@ export function CumulativeChart({ data }: { data: { date: string; cotas: number 
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={data} margin={{ left: -20 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={false} />
-          <XAxis dataKey="date" tick={{ fill: "#98979e", fontSize: 11 }} />
-          <YAxis tick={{ fill: "#98979e", fontSize: 11 }} />
+          <XAxis dataKey="date" tick={{ fill: TICK, fontSize: 11 }} />
+          <YAxis tick={{ fill: TICK, fontSize: 11 }} />
           <Tooltip contentStyle={tooltipStyle} />
           <Line type="monotone" dataKey="cotas" stroke={ACCENT_LIGHT} strokeWidth={2} dot={false} />
         </LineChart>
