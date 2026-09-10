@@ -16,9 +16,9 @@ export function Stepper({ current }: { current: number }) {
             <div className="flex flex-col items-center gap-1.5">
               <span
                 className={cn(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-colors",
-                  done && "border-accent bg-accent text-sidebar",
-                  active && !done && "border-accent text-accent-light",
+                  "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-all duration-300",
+                  done && "border-accent bg-accent text-sidebar glow-accent-sm",
+                  active && !done && "border-accent text-accent-light ring-4 ring-accent/10",
                   !active && !done && "border-border text-foreground-muted",
                 )}
               >

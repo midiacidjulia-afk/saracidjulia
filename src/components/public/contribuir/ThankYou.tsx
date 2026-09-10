@@ -26,7 +26,7 @@ export function ThankYou({
 
   return (
     <Card className="mx-auto max-w-2xl text-center glow-gold animate-fade-up">
-      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-success/40 bg-success/10 text-success">
+      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-success/30 bg-success/[0.08] text-success">
         <CheckCircle2 size={32} strokeWidth={1.5} />
       </span>
 

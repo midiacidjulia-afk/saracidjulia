@@ -185,7 +185,7 @@ export function Wizard({
                 <button
                   type="button"
                   onClick={() => update("cotas", Math.max(1, form.cotas - 1))}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-colors hover:border-accent/50 hover:text-foreground"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-xl text-foreground-muted transition-all active:scale-95 hover:border-accent/40 hover:text-foreground"
                   aria-label="Diminuir cotas"
                 >
                   −
@@ -196,7 +196,7 @@ export function Wizard({
                 <button
                   type="button"
                   onClick={() => update("cotas", form.cotas + 1)}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-sidebar transition-colors hover:brightness-95"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-accent bg-accent text-xl text-sidebar transition-all glow-accent-sm active:scale-95 hover:brightness-95"
                   aria-label="Aumentar cotas"
                 >
                   +
@@ -212,8 +212,8 @@ export function Wizard({
                   onClick={() => update("cotas", n)}
                   className={`h-9 rounded-full border px-3.5 text-xs transition-colors ${
                     form.cotas === n
-                      ? "border-accent bg-accent/15 text-accent-light"
-                      : "border-border text-foreground-muted hover:border-accent/50"
+                      ? "border-accent bg-accent/[0.1] text-accent-light"
+                      : "border-border text-foreground-muted hover:border-accent/40"
                   }`}
                 >
                   {n} {n === 1 ? "cota" : "cotas"}
@@ -221,7 +221,7 @@ export function Wizard({
               ))}
             </div>
 
-            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4 text-center">
+            <div className="rounded-xl border border-gold/25 bg-gold/[0.06] p-5 text-center">
               <p className="text-sm text-foreground-muted">Valor total da sua participação</p>
               <p className="font-serif text-2xl text-gold-gradient">{formatCurrency(amount)}</p>
             </div>
@@ -248,16 +248,16 @@ export function Wizard({
 
         {step === 4 ? (
           <>
-            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-gold-light">
+            <div className="rounded-xl border border-gold/25 bg-gold/[0.06] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-light">
                 Faça sua oferta via Pix
               </p>
-              <div className="mt-2 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-2.5 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="break-all font-mono text-sm text-foreground">{pixKey}</span>
                 <button
                   type="button"
                   onClick={copyPixKey}
-                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/40 px-3 py-1.5 text-xs text-gold-light transition-colors hover:bg-gold/10"
+                  className="flex shrink-0 items-center gap-1.5 rounded-full border border-gold/30 px-3 py-1.5 text-xs text-gold-light transition-colors hover:bg-gold/10"
                 >
                   {pixCopied ? <Check size={14} /> : <Copy size={14} />}
                   {pixCopied ? "Copiado!" : "Copiar chave"}
@@ -270,19 +270,19 @@ export function Wizard({
               hint="Imagem ou PDF, até 10MB. Você também poderá enviar pelo WhatsApp na próxima tela."
             >
             {form.receipt ? (
-              <div className="flex items-center justify-between rounded-lg border border-border bg-background-elevated px-4 py-3">
+              <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3.5">
                 <span className="truncate text-sm text-foreground">{form.receipt.name}</span>
                 <button
                   type="button"
                   onClick={() => update("receipt", null)}
-                  className="text-foreground-muted hover:text-danger"
+                  className="text-foreground-muted transition-colors hover:text-danger"
                   aria-label="Remover arquivo"
                 >
                   <X size={16} />
                 </button>
               </div>
             ) : (
-              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-background-elevated px-4 py-8 text-center transition-colors hover:border-accent/50">
+              <label className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-background-elevated px-4 py-9 text-center transition-colors hover:border-accent/40 hover:bg-background-card">
                 <Upload size={22} className="text-accent-light" />
                 <span className="text-sm text-foreground">Clique para enviar o comprovante</span>
                 <span className="text-xs text-foreground-muted">PNG, JPG ou PDF · até 10MB</span>
@@ -310,7 +310,7 @@ export function Wizard({
             <p className="text-sm text-foreground-muted">
               Revise seus dados antes de finalizar sua participação.
             </p>
-            <dl className="grid grid-cols-2 gap-4 rounded-lg border border-border bg-background-elevated p-4 text-sm">
+            <dl className="grid grid-cols-2 gap-4 rounded-xl border border-border bg-background-elevated p-5 text-sm">
               <div>
                 <dt className="text-foreground-muted">Nome</dt>
                 <dd className="text-foreground">{form.name}</dd>
@@ -337,7 +337,7 @@ export function Wizard({
               </div>
             </dl>
 
-            <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-background-elevated p-4 text-sm">
+            <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-background-elevated p-4 text-sm transition-colors hover:border-accent/30">
               <input
                 type="checkbox"
                 checked={form.hideFromRanking}
