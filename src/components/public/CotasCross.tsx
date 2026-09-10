@@ -49,8 +49,10 @@ export function CotasCross({
               <span
                 key={i}
                 className={cn(
-                  "block h-[9px] w-[9px] shrink-0 transition-colors sm:h-[11px] sm:w-[11px]",
-                  isFilled ? "bg-gold glow-gold-sm" : "bg-background-elevated border border-border",
+                  "block h-[9px] w-[9px] shrink-0 transition-colors duration-300 sm:h-[11px] sm:w-[11px]",
+                  isFilled
+                    ? "bg-gradient-to-b from-gold-light to-gold glow-gold-sm"
+                    : "bg-background-elevated border border-border/70",
                 )}
                 style={{
                   clipPath:

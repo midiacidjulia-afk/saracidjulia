@@ -14,11 +14,12 @@ export function Hero() {
     <section className="relative overflow-hidden border-b border-border bg-radial-glow">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(231,224,207,0.14),transparent_45%)]" />
       <Container className="relative py-20 sm:py-28">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center animate-fade-up">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-7 text-center animate-fade-up">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+            <span className="text-xs font-semibold uppercase tracking-[0.26em] text-accent">
               Campanha de arrecadação
             </span>
+            <span className="h-1 w-1 rounded-full bg-border" />
             <span className="text-xs italic text-foreground-muted">
               &ldquo;Dai, e ser-vos-á dado...&rdquo; — Lucas 6:38
             </span>
@@ -45,11 +46,11 @@ export function Hero() {
             </LinkButton>
           </div>
 
-          <div className="mt-2 flex flex-wrap justify-center gap-x-8 gap-y-3 border-t border-border pt-6">
+          <div className="mt-3 flex flex-wrap justify-center gap-x-9 gap-y-3 border-t border-border pt-7">
             {pillars.map((p) => (
               <span key={p.label} className="flex items-center gap-2 text-sm text-foreground-muted">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent-light">
-                  <p.icon size={15} strokeWidth={1.75} />
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border border-accent/20 bg-accent/[0.06] text-accent-light">
+                  <p.icon size={15} strokeWidth={1.6} />
                 </span>
                 {p.label}
               </span>

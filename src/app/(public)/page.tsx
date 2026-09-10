@@ -47,7 +47,7 @@ export default async function DashboardPage() {
 
       <ImpactBlock />
 
-      <section className="py-16 sm:py-24">
+      <section className="border-t border-border py-20 sm:py-28">
         <Container className="flex flex-col gap-10">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -65,7 +65,7 @@ export default async function DashboardPage() {
         </Container>
       </section>
 
-      <section className="pb-16 sm:pb-24">
+      <section className="border-t border-border pb-20 pt-20 sm:pb-28 sm:pt-28">
         <Container className="mx-auto flex max-w-2xl flex-col gap-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Comunidade" title="Últimas contribuições" />
@@ -77,7 +77,7 @@ export default async function DashboardPage() {
         </Container>
       </section>
 
-      <section className="border-t border-border bg-radial-glow py-16 sm:py-20">
+      <section className="border-t border-border bg-radial-glow py-20 sm:py-24">
         <Container className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-16">
           <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <h2 className="max-w-xl font-serif text-3xl text-foreground sm:text-4xl">

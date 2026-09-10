@@ -32,14 +32,14 @@ export function GoalCard({
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-lg border border-border bg-background-elevated px-4 py-3">
-              <p className="text-[11px] uppercase tracking-[0.12em] text-foreground-muted">
+            <div className="rounded-xl border border-border bg-background-elevated px-4 py-3.5">
+              <p className="text-[11px] uppercase tracking-[0.14em] text-foreground-muted">
                 Nosso alvo
               </p>
               <p className="text-lg font-semibold text-foreground">{formatCurrency(goalAmount)}</p>
             </div>
-            <div className="rounded-lg border border-border bg-background-elevated px-4 py-3">
-              <p className="text-[11px] uppercase tracking-[0.12em] text-foreground-muted">
+            <div className="rounded-xl border border-border bg-background-elevated px-4 py-3.5">
+              <p className="text-[11px] uppercase tracking-[0.14em] text-foreground-muted">
                 Cada cota
               </p>
               <p className="text-lg font-semibold text-foreground">{formatCurrency(cotaValue)}</p>
@@ -48,8 +48,8 @@ export function GoalCard({
         </div>
       </div>
 
-      <div className="mt-6 border-t border-border pt-6">
-        <div className="h-3 w-full overflow-hidden rounded-full bg-background-elevated">
+      <div className="mt-7 border-t border-border pt-6">
+        <div className="h-2.5 w-full overflow-hidden rounded-full bg-background-elevated">
           <div
             className="relative h-full rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light"
             style={{ width: `${percent}%` }}
@@ -57,7 +57,7 @@ export function GoalCard({
             <div className="absolute inset-0 animate-shimmer" />
           </div>
         </div>
-        <div className="mt-2 flex items-center justify-between text-xs text-foreground-muted">
+        <div className="mt-2.5 flex items-center justify-between text-xs text-foreground-muted">
           <span>{formatCurrency(totalRaised)} arrecadados</span>
           <span>{formatCurrency(remaining)} para o objetivo</span>
         </div>
