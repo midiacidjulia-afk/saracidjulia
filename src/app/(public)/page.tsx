@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Users } from "lucide-react";
 import { Hero } from "@/components/public/Hero";
 import { GoalCard } from "@/components/public/GoalCard";
+import { HowToParticipate } from "@/components/public/HowToParticipate";
 import { ImpactBlock } from "@/components/public/ImpactBlock";
 import { CotasCross } from "@/components/public/CotasCross";
 import { ContributionsList } from "@/components/public/ContributionsList";
@@ -45,6 +46,8 @@ export default async function DashboardPage() {
           <StatCard icon={Users} value={formatNumber(stats.totalParticipants)} label="Pessoas que já contribuíram" />
         </div>
       </Container>
+
+      <HowToParticipate cotaValue={settings.cotaValue} />
 
       <ImpactBlock />
 
