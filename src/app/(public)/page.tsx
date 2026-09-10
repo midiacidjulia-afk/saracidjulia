@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { FileCheck2, Landmark, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import { Hero } from "@/components/public/Hero";
 import { GoalCard } from "@/components/public/GoalCard";
 import { ImpactBlock } from "@/components/public/ImpactBlock";
 import { CotasPyramid } from "@/components/public/CotasPyramid";
-import { RankingList } from "@/components/public/RankingList";
 import { ContributionsList } from "@/components/public/ContributionsList";
 import { VideoMessage } from "@/components/public/VideoMessage";
 import { QrCode } from "@/components/public/QrCode";
@@ -15,18 +14,16 @@ import { LinkButton } from "@/components/ui/Button";
 import { formatNumber } from "@/lib/utils";
 import {
   getCampaignStats,
-  getChurches,
   getContributions,
   getImpactStats,
   getSettings,
 } from "@/lib/data/queries";
 
 export default async function DashboardPage() {
-  const [settings, stats, impact, churches, contributions] = await Promise.all([
+  const [settings, stats, impact, contributions] = await Promise.all([
     getSettings(),
     getCampaignStats(),
     getImpactStats(),
-    getChurches(),
     getContributions(6),
   ]);
 
@@ -34,7 +31,7 @@ export default async function DashboardPage() {
     <>
       <VideoMessage />
 
-      <Hero impact={impact} />
+      <Hero />
 
       <Container className="-mt-10 sm:-mt-14">
         <GoalCard
@@ -45,10 +42,8 @@ export default async function DashboardPage() {
           cotaValue={settings.cotaValue}
         />
 
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-6 max-w-sm">
           <StatCard icon={Users} value={formatNumber(stats.totalParticipants)} label="Pessoas que já contribuíram" />
-          <StatCard icon={Landmark} value={formatNumber(stats.totalChurches)} label="Igrejas envolvidas" />
-          <StatCard icon={FileCheck2} value={formatNumber(stats.totalReceipts)} label="Comprovantes enviados" />
         </div>
       </Container>
 
@@ -73,26 +68,14 @@ export default async function DashboardPage() {
       </section>
 
       <section className="pb-16 sm:pb-24">
-        <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <SectionHeading eyebrow="Ranking" title="Igrejas participantes" />
-              <Link href="/ranking" className="text-sm text-accent hover:text-accent-light">
-                Ver ranking completo →
-              </Link>
-            </div>
-            <RankingList churches={churches} limit={5} />
+        <Container className="mx-auto flex max-w-2xl flex-col gap-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading eyebrow="Comunidade" title="Últimas contribuições" />
+            <Link href="/contribuicoes" className="text-sm text-accent hover:text-accent-light">
+              Ver todas →
+            </Link>
           </div>
-
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <SectionHeading eyebrow="Comunidade" title="Últimas contribuições" />
-              <Link href="/contribuicoes" className="text-sm text-accent hover:text-accent-light">
-                Ver todas →
-              </Link>
-            </div>
-            <ContributionsList contributions={contributions} />
-          </div>
+          <ContributionsList contributions={contributions} />
         </Container>
       </section>
 
