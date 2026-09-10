@@ -15,15 +15,13 @@ import { formatNumber } from "@/lib/utils";
 import {
   getCampaignStats,
   getContributions,
-  getImpactStats,
   getSettings,
 } from "@/lib/data/queries";
 
 export default async function DashboardPage() {
-  const [settings, stats, impact, contributions] = await Promise.all([
+  const [settings, stats, contributions] = await Promise.all([
     getSettings(),
     getCampaignStats(),
-    getImpactStats(),
     getContributions(6),
   ]);
 
@@ -47,7 +45,7 @@ export default async function DashboardPage() {
         </div>
       </Container>
 
-      <ImpactBlock impact={impact} />
+      <ImpactBlock />
 
       <section className="py-16 sm:py-24">
         <Container className="flex flex-col gap-10">
