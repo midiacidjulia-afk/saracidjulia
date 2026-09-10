@@ -22,7 +22,7 @@ export function ProgressRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="var(--border)"
+          stroke="var(--background-elevated)"
           strokeWidth={strokeWidth}
         />
         <circle
@@ -35,13 +35,17 @@ export function ProgressRing({
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
-          style={{ transition: "stroke-dashoffset 0.6s ease-out" }}
+          filter="url(#ring-glow)"
+          style={{ transition: "stroke-dashoffset 0.8s ease-out" }}
         />
         <defs>
           <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="var(--gold-dark)" />
             <stop offset="100%" stopColor="var(--gold-light)" />
           </linearGradient>
+          <filter id="ring-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="var(--gold)" floodOpacity="0.35" />
+          </filter>
         </defs>
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
