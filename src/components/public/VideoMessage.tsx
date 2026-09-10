@@ -32,10 +32,10 @@ export function VideoMessage() {
 
       <Container className="flex flex-col items-center gap-4 py-14 text-center sm:py-20">
         <span className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-light">
-          Uma palavra de Nivaldo
+          Faça parte dessa Obra
         </span>
         <h2 className="max-w-xl font-serif text-2xl leading-tight sm:text-3xl">
-          Um convite direto de quem cuida dessa obra
+          Uma mensagem do Pastor Nivaldo para você
         </h2>
         <p className="max-w-lg text-sm text-sidebar-foreground-muted">
           Ative o som para ouvir por que sua participação faz toda a diferença.
