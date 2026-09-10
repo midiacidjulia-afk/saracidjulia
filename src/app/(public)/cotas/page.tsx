@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CotasPyramid } from "@/components/public/CotasPyramid";
+import { CotasCross } from "@/components/public/CotasCross";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { formatCurrency, formatNumber } from "@/lib/utils";
@@ -38,7 +38,7 @@ export default async function CotasPage() {
               {percent.toLocaleString("pt-BR", { maximumFractionDigits: 1 })}%
             </Badge>
 
-            <CotasPyramid total={settings.totalCotas} filled={stats.totalCotasFilled} />
+            <CotasCross total={settings.totalCotas} filled={stats.totalCotasFilled} />
 
             <div className="text-center">
               <p className="font-serif text-3xl text-gold-gradient">

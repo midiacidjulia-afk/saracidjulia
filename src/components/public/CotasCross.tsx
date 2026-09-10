@@ -1,33 +1,32 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Distribui `maxCells` células em linhas triangulares (1, 2, 3, ...) até
- * somar o mais próximo possível de `maxCells`, formando uma pirâmide.
- * Cada célula representa uma fração proporcional do total real de cotas.
+ * Linhas de uma cruz latina, da largura da haste (mais estreita) até os
+ * braços (largura total) e de volta à haste. Cada linha é centralizada
+ * horizontalmente pelo container flex, então basta variar o comprimento.
  */
-function buildPyramid(maxCells: number) {
-  const n = Math.floor((Math.sqrt(8 * maxCells + 1) - 1) / 2);
-  const rows: number[] = [];
-  let used = 0;
-  for (let i = 1; i <= n; i++) {
-    rows.push(i);
-    used += i;
-  }
-  const remainder = maxCells - used;
-  if (remainder > 0) rows.push(remainder);
-  return rows;
+function buildCrossRows(): number[] {
+  const stemWidth = 6;
+  const armWidth = 16;
+  const topStemRows = 3;
+  const armRows = 5;
+  const bottomStemRows = 17;
+
+  return [
+    ...Array(topStemRows).fill(stemWidth),
+    ...Array(armRows).fill(armWidth),
+    ...Array(bottomStemRows).fill(stemWidth),
+  ];
 }
 
-export function CotasPyramid({
+export function CotasCross({
   total,
   filled,
-  maxCells = 780,
 }: {
   total: number;
   filled: number;
-  maxCells?: number;
 }) {
-  const rows = buildPyramid(maxCells);
+  const rows = buildCrossRows();
   const totalCells = rows.reduce((sum, r) => sum + r, 0);
   const filledCells = Math.round((filled / total) * totalCells);
 

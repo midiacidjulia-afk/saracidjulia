@@ -3,7 +3,7 @@ import { Users } from "lucide-react";
 import { Hero } from "@/components/public/Hero";
 import { GoalCard } from "@/components/public/GoalCard";
 import { ImpactBlock } from "@/components/public/ImpactBlock";
-import { CotasPyramid } from "@/components/public/CotasPyramid";
+import { CotasCross } from "@/components/public/CotasCross";
 import { ContributionsList } from "@/components/public/ContributionsList";
 import { VideoMessage } from "@/components/public/VideoMessage";
 import { QrCode } from "@/components/public/QrCode";
@@ -52,7 +52,7 @@ export default async function DashboardPage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
               eyebrow="Nossas cotas"
-              title="Cada cota preenchida acende um novo passo"
+              title="Faça parte da construção desse novo TEMPLO"
               description={`${settings.totalCotas.toLocaleString("pt-BR")} cotas de R$ ${settings.cotaValue.toFixed(0)} compõem a meta de R$ ${settings.goalAmount.toLocaleString("pt-BR")}. Veja o quanto já caminhamos juntos.`}
             />
             <LinkButton href="/cotas" variant="secondary">
@@ -60,7 +60,7 @@ export default async function DashboardPage() {
             </LinkButton>
           </div>
           <div className="flex justify-center">
-            <CotasPyramid total={settings.totalCotas} filled={stats.totalCotasFilled} maxCells={300} />
+            <CotasCross total={settings.totalCotas} filled={stats.totalCotasFilled} />
           </div>
         </Container>
       </section>
