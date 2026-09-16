@@ -14,7 +14,7 @@ export default async function RankingPage() {
   ]);
 
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-20 sm:py-28">
       <Container className="flex flex-col gap-10">
         <SectionHeading
           eyebrow="Ranking"

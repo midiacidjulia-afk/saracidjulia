@@ -20,6 +20,7 @@ export async function submitContribution(
   const cotas = Number(formData.get("cotas") ?? 0);
   const amount = Number(formData.get("amount") ?? 0);
   const contributionDate = String(formData.get("contributionDate") ?? "");
+  const hideFromRanking = formData.get("hideFromRanking") === "true";
   const receipt = formData.get("receipt");
 
   if (!name || !whatsapp || !city || !churchName) {
@@ -69,7 +70,7 @@ export async function submitContribution(
 
   const { data: participant, error: participantError } = await supabase
     .from("participants")
-    .insert({ name, whatsapp, city, church_id: churchId })
+    .insert({ name, whatsapp, city, church_id: churchId, hide_from_ranking: hideFromRanking })
     .select("id")
     .single();
 

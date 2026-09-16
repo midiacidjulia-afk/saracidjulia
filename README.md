@@ -1,12 +1,17 @@
 # Juntos pela Obra
 
 Plataforma de arrecadação da igreja **Sara Nossa Terra — Júlia-SP**, com meta de
-**R$ 100.000,00** para reforma do templo, dividida em **1.000 cotas de R$ 100,00**.
+**R$ 20.000,00** para reforma do salão, dividida em **200 cotas de R$ 100,00**.
 
 > "Um templo renovado. Mais vidas alcançadas."
 
 Veja `CLAUDE.md` para o contexto completo do projeto (identidade visual, tom de
 voz, estrutura de páginas e modelo de dados).
+
+> **Testando este PR:** sem Supabase configurado, o preview sobe em modo de
+> demonstração com dados de exemplo — inclusive o painel `/admin`, acessível
+> sem login (com aviso visível). Veja a seção "Conectando o Supabase" abaixo
+> para ligar dados reais.
 
 ## Stack
 

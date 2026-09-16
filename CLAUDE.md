@@ -6,8 +6,9 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Sobre o projeto
 
-**Juntos pela Obra** — plataforma de arrecadação da igreja **Sara Nossa Terra (Júlia-SP)**, com meta de **R$ 100.000,00** para reforma do templo, dividida em **1.000 cotas de R$ 100,00**.
+**Juntos pela Obra** — plataforma de arrecadação da igreja **Sara Nossa Terra (Júlia-SP)**, para reformar o salão e transformar um espaço que era um bar em uma igreja estruturada.
 
+- Orçamento total da obra: **R$ 28.000,00**; já arrecadados **R$ 8.000,00** com ofertas especiais; meta desta campanha: **R$ 20.000,00**, dividida em **200 cotas de R$ 100,00**
 - Slogan: "Um templo renovado. Mais vidas alcançadas."
 - Contato responsável pela obra: **Nivaldo** (recebe comprovantes via WhatsApp)
 - Referência: Lucas 6:38, citada no hero da página inicial
@@ -23,12 +24,23 @@ Este arquivo dá contexto ao Claude Code sobre o projeto. Leia antes de gerar ou
 
 ## Identidade visual
 
-- Base: preto/grafite
-- Destaque: dourado
-- Texto: branco
-- Tipografia elegante, institucional (Playfair Display nos títulos, Inter no corpo)
-- Glow/luz sutil, animações discretas — nunca "gamificado" ou infantilizado
+Tema escuro azul-marinho unificado em toda a aplicação, com o **dourado como destaque único** (marca, ação, valor e celebração convergem na mesma família de cor — `accent` e `gold` são o mesmo tom) — visual "clássico/tradicional premium" escolhido pelo cliente entre 4 direções de paleta comparadas lado a lado.
+
+- Fundo: azul-marinho profundo unificado em toda a aplicação — `background` (#0d1420, base), `background-elevated`, `background-card` (elevações mais claras, para hierarquia); `sidebar` (#070c15) mais escura que o conteúdo, para o menu/rodapé se destacarem como um painel
+- Destaque único de marca/ação/valor: dourado (`accent`/`gold` e suas variantes `-light`/`-dark`, #d4af6a) — badge da marca, botões, links, navegação, cruz de cotas, valores arrecadados, medalhas do ranking, citações em itálico; por ser um tom claro sobre fundo escuro, todo preenchimento sólido de `bg-accent` usa texto escuro (`text-sidebar`) em vez de branco, para manter contraste
+- Cores de status: verde/âmbar/vermelho vivos (`success`/`warning`/`danger`), tons "-400" do Tailwind — legíveis sobre fundo escuro
+- Texto: off-white quente (`foreground`) sobre o grafite
+- Tipografia elegante, institucional (Playfair Display só em títulos de seção, Inter no corpo e em UI)
+- Craft "premium discreto": sombras suaves e bordas quase invisíveis (`card-surface`), glows sutis (`glow-accent`, `glow-gold`) em vez de neon, `.animate-shimmer` roda uma vez só no carregamento (não em loop), microinterações discretas (`active:scale-95`, anéis de foco) em botões e steppers
+- Espaço negativo generoso: ritmo vertical padronizado entre seções (`py-20 sm:py-28`) em todas as páginas públicas
 - Layout mobile-first, design responsivo em todas as páginas (com navegação inferior no mobile)
+- Vídeo de mensagem (Nivaldo) como banner no topo da home, antes do hero — não mais como plano de fundo full-bleed
+- Marca (`Logo.tsx`) é o contorno exato da chama do logo real da igreja, extraído por vetorização (potrace) a partir do arquivo enviado pelo cliente (`public/images/logo-original.webp` — chama branca + wordmark "Sara Nossa Terra — Cidade Júlia" sobre fundo preto); não é mais uma aproximação manual
+- Wordmark do cabeçalho público (`PublicSidebar.tsx`/`PublicShell.tsx`): "Sara Nossa Terra" / "Cidade Júlia", espelhando a hierarquia do logo real
+- Visualização de cotas (`CotasCross.tsx`) desenha uma cruz latina com estrelas douradas em vez de pirâmide, proporcional ao preenchimento (`filled`/`total`)
+- Cotas de admin (gráficos do Recharts em `Charts.tsx`) usam constantes de cor hex sincronizadas manualmente com os tokens de `globals.css` — não são geradas automaticamente, então qualquer nova mudança de paleta precisa atualizar os dois lugares
+
+Histórico: v1 preto/dourado → v2 claro/creme → v3 híbrido (menu escuro + conteúdo claro) com azul da SNT → v4 cinza escuro unificado com azul+dourado → v5 vídeo em banner no topo, logo refinado, azul trocado por branco pérola → v6 cinza mais claro, pérola mais intenso, wordmark "Sara / Cidade Júlia" → v7 redesign visual completo ("dark premium") sobre a mesma base de tokens, grafite + pérola + dourado moderado → **v8 (atual)**: troca de paleta — grafite substituído por azul-marinho profundo, pérola removido e dourado promovido a cor única de destaque (marca + ação + valor), escolhida pelo cliente entre 4 direções renderizadas lado a lado (grafite/pérola atual, híbrido claro, azul-marinho/dourado, grafite/cobre). Zero mudança de dado, rota ou regra de negócio nessa rodada.
 
 ## Tom de voz (regra importante)
 

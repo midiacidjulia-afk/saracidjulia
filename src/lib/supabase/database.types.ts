@@ -37,6 +37,7 @@ export type Database = {
           whatsapp: string;
           city: string;
           church_id: string;
+          hide_from_ranking: boolean;
           created_at: string;
         };
         Insert: {
@@ -45,6 +46,7 @@ export type Database = {
           whatsapp: string;
           city: string;
           church_id: string;
+          hide_from_ranking?: boolean;
           created_at?: string;
         };
         Update: {
@@ -53,6 +55,7 @@ export type Database = {
           whatsapp?: string;
           city?: string;
           church_id?: string;
+          hide_from_ranking?: boolean;
           created_at?: string;
         };
         Relationships: [

@@ -50,7 +50,10 @@ export default async function AdminDashboardPage() {
             </thead>
             <tbody>
               {recent.map((p) => (
-                <tr key={p.id} className="border-b border-border last:border-0">
+                <tr
+                  key={p.id}
+                  className="border-b border-border transition-colors last:border-0 hover:bg-background-elevated/50"
+                >
                   <td className="px-5 py-3 text-foreground">{p.name}</td>
                   <td className="px-5 py-3 text-foreground-muted">{p.churchName}</td>
                   <td className="px-5 py-3 text-foreground-muted">{p.cotas}</td>

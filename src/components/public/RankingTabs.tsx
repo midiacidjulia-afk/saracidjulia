@@ -28,9 +28,9 @@ export function RankingTabs({
             key={item.key}
             onClick={() => setTab(item.key)}
             className={cn(
-              "rounded-full px-4 py-2 text-sm transition-colors",
+              "rounded-full px-4 py-2 text-sm transition-all",
               tab === item.key
-                ? "bg-gold text-black"
+                ? "bg-accent text-sidebar"
                 : "text-foreground-muted hover:text-foreground",
             )}
           >

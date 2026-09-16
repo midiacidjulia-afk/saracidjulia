@@ -2,28 +2,46 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
+import { PhotoGallery } from "@/components/public/PhotoGallery";
 
 export const metadata = {
-  title: "Sobre a obra | Juntos pela Obra",
+  title: "Nossa história | Juntos pela Obra",
 };
 
 export default function SobrePage() {
   return (
     <>
-      <section className="border-b border-border bg-radial-glow py-16 sm:py-24">
+      <section className="border-b border-border bg-radial-glow py-20 sm:py-28">
         <Container>
           <SectionHeading
             align="center"
-            eyebrow="Sobre a obra"
-            title="Um templo renovado. Mais vidas alcançadas."
+            eyebrow="Nossa história"
+            title="Estamos transformando vidas. E você pode fazer parte disso."
+            description="Cada culto, cada oração, cada abraço na porta da igreja é parte de uma história que já mudou milhares de vidas — e que continua sendo escrita a cada domingo."
             className="mx-auto"
           />
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-20 sm:py-28">
+        <Container className="flex flex-col gap-10">
+          <PhotoGallery />
+
+          <div className="mx-auto max-w-2xl text-center text-foreground-muted leading-relaxed">
+            <p>
+              Por trás de cada cadeira ocupada, cada mão levantada em oração e
+              cada testemunho de recomeço, existe uma família que decidiu
+              caminhar junto com a Sara Nossa Terra — Júlia-SP. É gente comum
+              encontrando propósito, cura e comunidade. É isso que nos move.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-border py-20 sm:py-28">
         <Container className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr]">
           <div className="flex flex-col gap-6 text-foreground-muted leading-relaxed">
+            <h2 className="font-serif text-2xl text-foreground">Um templo renovado, mais vidas alcançadas</h2>
             <p>
               A igreja <strong className="text-foreground">Sara Nossa Terra — Júlia-SP</strong>{" "}
               iniciou a campanha <strong className="text-foreground">Juntos pela Obra</strong>{" "}
@@ -37,8 +55,16 @@ export default function SobrePage() {
               um passo de fé para tudo o que ainda está por vir.
             </p>
             <p>
-              A meta é arrecadar <strong className="text-foreground">R$ 100.000,00</strong>,
-              divididos em <strong className="text-foreground">1.000 cotas de R$ 100,00</strong>.
+              A obra completa está orçada em{" "}
+              <strong className="text-foreground">R$ 28.000,00</strong>, para
+              reformar o salão e transformar um espaço que já foi um bar em
+              uma igreja estruturada, pronta para receber famílias que
+              querem cultuar ao Senhor. Já arrecadamos{" "}
+              <strong className="text-foreground">R$ 8.000,00</strong> com
+              algumas ofertas especiais — e agora, iniciando esta campanha,
+              precisamos arrecadar mais{" "}
+              <strong className="text-foreground">R$ 20.000,00</strong>,
+              divididos em <strong className="text-foreground">200 cotas de R$ 100,00</strong>.
               Cada cota é um convite à participação coletiva — não uma doação
               distante, mas um gesto de pertencimento a algo maior que estamos
               construindo juntos.
@@ -52,7 +78,7 @@ export default function SobrePage() {
           </div>
 
           <Card className="h-fit">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-dark">
               Fale com a coordenação da obra
             </p>
             <p className="mt-3 text-sm text-foreground-muted leading-relaxed">

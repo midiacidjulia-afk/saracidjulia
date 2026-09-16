@@ -13,20 +13,20 @@ import type {
 // sem depender de um projeto Supabase já existente.
 
 export const mockSettings: Settings = {
-  goalAmount: 100_000,
+  goalAmount: 20_000,
   cotaValue: 100,
-  totalCotas: 1000,
+  totalCotas: 200,
   whatsappNumber: "5511999999999",
   whatsappContactName: "Nivaldo",
 };
 
 export const mockChurches: Church[] = [
-  { id: "1", name: "Sara Nossa Terra Júlia-SP", city: "São Paulo", cotas: 214, amount: 21_400, participants: 96 },
-  { id: "2", name: "Sara Nossa Terra Vila Prudente", city: "São Paulo", cotas: 132, amount: 13_200, participants: 58 },
-  { id: "3", name: "Sara Nossa Terra Osasco", city: "Osasco", cotas: 98, amount: 9_800, participants: 41 },
-  { id: "4", name: "Sara Nossa Terra Guarulhos", city: "Guarulhos", cotas: 76, amount: 7_600, participants: 33 },
-  { id: "5", name: "Sara Nossa Terra ABC", city: "Santo André", cotas: 54, amount: 5_400, participants: 27 },
-  { id: "6", name: "Sara Nossa Terra Zona Norte", city: "São Paulo", cotas: 41, amount: 4_100, participants: 19 },
+  { id: "1", name: "Sara Nossa Terra Cidade Júlia", city: "São Paulo", cotas: 34, amount: 3_400, participants: 18 },
+  { id: "2", name: "Sara Nossa Terra Vila Prudente", city: "São Paulo", cotas: 21, amount: 2_100, participants: 11 },
+  { id: "3", name: "Sara Nossa Terra Osasco", city: "Osasco", cotas: 15, amount: 1_500, participants: 8 },
+  { id: "4", name: "Sara Nossa Terra Guarulhos", city: "Guarulhos", cotas: 9, amount: 900, participants: 5 },
+  { id: "5", name: "Sara Nossa Terra ABC", city: "Santo André", cotas: 6, amount: 600, participants: 3 },
+  { id: "6", name: "Sara Nossa Terra Zona Norte", city: "São Paulo", cotas: 4, amount: 400, participants: 2 },
 ];
 
 const firstNames = [
@@ -53,10 +53,10 @@ function buildParticipants(): Participant[] {
   const list: Participant[] = [];
   const now = Date.now();
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 30; i++) {
     const church = mockChurches[Math.floor(rand() * mockChurches.length)];
-    const cotas = 1 + Math.floor(rand() * 8);
-    const daysAgo = Math.floor(rand() * 45);
+    const cotas = 1 + Math.floor(rand() * 4);
+    const daysAgo = Math.floor(rand() * 15);
     const name = `${firstNames[Math.floor(rand() * firstNames.length)]} ${lastNames[Math.floor(rand() * lastNames.length)]}`;
 
     list.push({
@@ -71,6 +71,7 @@ function buildParticipants(): Participant[] {
       date: new Date(now - daysAgo * 86_400_000).toISOString(),
       status: statuses[Math.floor(rand() * statuses.length)],
       createdAt: new Date(now - daysAgo * 86_400_000 - Math.floor(rand() * 3_600_000)).toISOString(),
+      hideFromRanking: rand() < 0.15,
     });
   }
 
@@ -111,7 +112,9 @@ export function computeCampaignStats(): CampaignStats {
 }
 
 export function computeTopParticipants(): TopParticipant[] {
-  const approved = mockParticipants.filter((p) => p.status === "aprovado");
+  const approved = mockParticipants.filter(
+    (p) => p.status === "aprovado" && !p.hideFromRanking,
+  );
   const byName = new Map<string, TopParticipant>();
 
   for (const p of approved) {

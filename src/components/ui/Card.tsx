@@ -9,7 +9,7 @@ export function Card({
   className?: string;
 }) {
   return (
-    <div className={cn("card-surface rounded-2xl p-6", className)}>
+    <div className={cn("card-surface rounded-[20px] p-6 sm:p-7", className)}>
       {children}
     </div>
   );
