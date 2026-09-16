@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, HandHeart, Trophy, Menu } from "lucide-react";
+import { Home, HandHeart, Trophy, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/", label: "Início", icon: Home },
   { href: "/contribuir", label: "Contribuir", icon: HandHeart },
   { href: "/ranking", label: "Ranking", icon: Trophy },
-  { href: "/sobre", label: "Menu", icon: Menu },
+  { href: "/cotas", label: "Cotas", icon: Star },
 ];
 
 export function MobileNav() {

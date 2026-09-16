@@ -32,9 +32,6 @@ export function Footer() {
             <Link href="/ranking" className="text-sidebar-foreground-muted hover:text-accent-light">
               Ranking
             </Link>
-            <Link href="/sobre" className="text-sidebar-foreground-muted hover:text-accent-light">
-              Sobre a obra
-            </Link>
           </div>
 
           <div className="flex flex-col gap-2.5">

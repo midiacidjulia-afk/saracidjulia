@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, HandHeart, Sparkles, Trophy, Clock, Info } from "lucide-react";
+import { Home, HandHeart, Sparkles, Trophy, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LogoBadge } from "@/components/ui/Logo";
 
@@ -12,7 +12,6 @@ const links = [
   { href: "/impacto", label: "Impacto", icon: Sparkles },
   { href: "/ranking", label: "Ranking", icon: Trophy },
   { href: "/contribuicoes", label: "Últimas contribuições", icon: Clock },
-  { href: "/sobre", label: "Sobre a obra", icon: Info },
 ];
 
 export function PublicSidebar() {
